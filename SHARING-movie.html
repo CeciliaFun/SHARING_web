@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <title>光与影</title>
+ <style>
+     <!-- head -->
+     div.header-blackLine
+     {
+         background-color: black;
+         height: 4px;
+     }
+     .header
+     {
+         height:120px;
+         width:1200px;
+         background:rgb(170,220,245);
+         position:absolute;
+         top:12px;
+         padding-right: 100px;
+         padding-left: 100px;
+         transition:0.4s;
+         border-bottom:2px solid rgba(180,180,180,0.6);
+     }
+     .header>ul{
+         height:50px;
+         margin-right:120px;
+         margin-top: 28px;
+         float:right;
+     }
+     .header>ul li{
+         color:#fff;
+         line-height:50px;
+         display:inline-block;
+         padding:0 20px;
+         float:left;
+     }
+     .header-li>a
+     {
+         color:black;
+         text-decoration: none;
+         font-size:15px;
+     }
+     .header-li>a:hover
+     {
+         color: rgb(234,62,72);
+     }
+     .logo
+     {
+         position: absolute;
+         left: 150px;
+         top:15px;
+         z-index: 1;
+     }
+     /*search*/
+     .search
+     {
+         height:135px;
+         width:1400px;
+         margin-top:-20px ;
+         background:rgba(180,180,180,0.15);
+         border-bottom:2px solid rgba(180,180,180,0.6);
+     }
+     .search div:nth-child(2)
+     {
+         margin-top: 170px;
+         float: right;
+         margin-right: 200px;
+     }
+     .search div:nth-child(1)
+     {
+         margin-top: 18px;
+         float: left;
+         margin-left: 135px;
+     }
+     .search div:nth-child(1)>ul>li:first-child
+     {
+         color: rgb(40,40,40);
+         font-size: x-large;
+         font-weight:lighter ;
+         display:block;
+     }
+     .search div:nth-child(1)>ul>li:nth-child(2)
+     {
+         display: block;
+         line-height: 40px;
+         color: rgb(140,140,140);
+     }
+     .search-form input
+     {
+         position: absolute;
+         top: 178px;
+         right: 166px;
+         width: 20%;
+         height: 35px;
+         padding-left: 20px;
+         border: 2px solid rgb(180,180,180);
+         border-radius: 5px;
+         outline: none;
+         background:white;
+         color:black;
+     }
+     .search-form button
+     {
+         color: white;
+         position: absolute;
+         top: 180px;
+         right: 168px;
+         width: 42px;
+         height: 37px;
+         border: none;
+         background:rgb(170,220,245);
+         border-radius: 0 5px 5px 0;
+         cursor: pointer;
+     }
+     <!-- footer -->
+     .footer div:nth-child(1)
+     {
+         float: left;
+         height: 110px;
+     }
+
+     .footer div:nth-child(2)
+     {
+         float: right;
+         height: 110px;
+     }
+
+     .footer>div>span
+     {
+         display: block;
+
+         color: rgb(100,100,100);
+         font-size: small;
+     }
+
+     .footer>div:nth-child(1)>span
+     {   margin-top: 15px;
+         margin-left: 60px;
+     }
+     .footer>div:nth-child(2)>span
+     {
+         margin-top: -15px;
+         margin-right: 160px;
+     }
+     /*spcial*/
+     #special
+     {
+         -webkit-column-count: 2;
+         font-size: 20px;
+         font-weight: 300;
+         color:#676767;
+         margin-left: 250px;
+         margin-top: 50px;
+     }
+     .special
+     {
+         position: relative;
+         left: -250px;
+         top: 150px;
+     }
+     #tui{
+         font-size: 30px;
+     }
+     #tui1{
+         font-size: 40px;
+         color: #676767;
+     }
+     /*content*/
+     #content .post {
+         padding-right: 15px;
+     }
+     #content, #sidebar
+     {
+         margin-top: 20px;
+     }
+
+     #content .post {
+         padding-right: 15px;
+     }
+     /*tag-links*/
+     .tag-links {
+         float: right;
+         opacity: 0.5;
+         position: relative;
+         top:-5px;
+         -webkit-transition: all 0.4s;
+         left: -500px;
+
+     }
+
+     .tag-links a {  /* tags */
+         background-color: #FAFAFA;
+         padding: 0px 5px 2px 5px;
+         border:1px solid #EDEDED;
+         font-size:12px;
+         font-weight: 300;
+         color:#777777;
+
+
+     }
+
+     .tag-links a:hover {
+         color: #DF2020;
+         background-color: white;
+         border:1px solid #F8F8F8;
+
+     }
+
+     @media (min-width: 979px) and (max-width: 1070px) {<!--根据屏幕样式设置样式 -->
+
+         .entry-meta-left {
+             display:none !important;<!--！important设置权重优先 -->
+         }
+     }
+
+     @media (max-width: 680px) {
+         .tag-links {
+             display: block !important;
+             float: none !important;
+             padding-top: 10px !important;
+         }
+     }
+     /*post*/
+     .post:hover .more-link {
+         color:#DF2020;
+     }
+
+     .post:hover .tag-links {
+         opacity: 1;
+     }
+
+     .post {
+         margin-bottom: 50px;
+     }
+     /*entry-header*/
+     .entry-header
+     {
+         position:relative;
+     }
+     /* left meta data (date and comments) */
+
+     .entry-meta-left {
+         position: absolute;
+         left:65px;
+         top:5px;
+         width: 40px;
+         background-color: #df2020;
+         text-align: center;
+         line-height: 12px;
+         padding: 4px;
+     }
+
+     .entry-meta-left+ p {
+         font-size:12px;
+         color:white;
+     }
+
+     /* entry-title */
+
+     .entry-title {
+         margin-bottom: 3px;
+         position: absolute;
+         left:120px;
+         text-decoration: none;
+     }
+     .entry-title a:link{color: #777777}
+     .entry-title a:hover{color: crimson}
+     .entry-title a:visited{color: aqua}
+
+     /* entry meta */
+
+     .entry-meta {
+         font-size: 12px;
+         font-weight: 300;
+         position: relative;
+         top: 50px;
+         left: 120px;
+     }
+     .entry-meta a {
+         color:#777777;
+     }
+
+     .entry-meta a:hover {
+         color:#DF2020;
+     }
+     /*entry-content*/
+     .entry-content
+     {
+         font-size: 12px;
+         font-weight: 300;
+         margin-top: 15px;
+         position: relative;
+         color:#676767;
+         top: 50px;
+         left: 120px;
+         -webkit-column-count:2 ;
+     }
+     .ariti
+     {
+         position:relative ;
+         left: -500px;
+         font-size:15px;
+     }
+     /*silidar*/
+     #sidebar{
+         position: relative;
+         float: right;
+         top: -800px;
+         left: 250px;
+
+     }
+     /*票房*/
+     .widget_piaofang
+     {
+         font-size: 10px;
+         margin-bottom: -1000px;
+         position: relative;
+         top: -750px;
+     }
+     .widget-title
+     {
+         font-size: 15px;
+     }
+     .piaofang{
+         font-size: x-small;
+         position: relative;
+         left: 100px;
+         -webkit-column-count:2 ;
+         color:#676767;
+     }
+     .tianshu
+     {
+         position: relative;
+         left: -100px;
+         color:#676767;
+     }
+     /*jinma*/
+     .jinma
+     {
+         font-size: 15px;
+         color:#676767;
+     }
+     .tp
+     {
+         font-size: 10px;
+     }
+     /*tag*/
+     .tag
+     {
+         font-size: 1em;
+     }
+ </style>
+    <!--duye-->
+    <script>
+        //展示
+        function showBigPic(filepath) {
+            //将文件路径传给img大图
+            document.getElementById('bigPicduye').src = filepath;
+            //获取大图div是否存在
+            var div = document.getElementById("bigPicViewduye");
+            if (!div) {
+                return;
+            }
+            //如果存在则展示
+            document.getElementById("bigPicViewduye").style.display="block";
+            //获取鼠标坐标
+            var intX = window.event.clientX;
+            var intY = window.event.clientY;
+            //设置大图左上角起点位置
+            div.style.left = intX +10+ "px";
+            div.style.top = intY + -10+"px";
+        }
+        //隐藏
+        function closeimg(){
+            document.getElementById("bigPicViewduye").style.display="none";
+        }
+    </script>
+    <!--kenan-->
+    <script>
+        //展示
+        function showBigPic(filepath) {
+            //将文件路径传给img大图
+            document.getElementById('bigPickenan').src = filepath;
+            //获取大图div是否存在
+            var div = document.getElementById("bigPicViewkenan");
+            if (!div) {
+                return;
+            }
+            //如果存在则展示
+            document.getElementById("bigPicViewkenan").style.display="block";
+            //获取鼠标坐标
+            var intX = window.event.clientX;
+            var intY = window.event.clientY;
+            //设置大图左上角起点位置
+            div.style.left = intX +0+ "px";
+            div.style.top = intY + 400+"px";
+        }
+        //隐藏
+        function closeimg(){
+            document.getElementById("bigPicViewkenan").style.display="none";
+        }
+    </script>
+    <!--wuming-->
+    <script>
+        //展示
+        function showBigPic(filepath) {
+            //将文件路径传给img大图
+            document.getElementById('bigPicwuming').src = filepath;
+            //获取大图div是否存在
+            var div = document.getElementById("bigPicViewwuming");
+            if (!div) {
+                return;
+            }
+            //如果存在则展示
+            document.getElementById("bigPicViewwuming").style.display="block";
+            //获取鼠标坐标
+            var intX = window.event.clientX;
+            var intY = window.event.clientY;
+            //设置大图左上角起点位置
+            div.style.left = intX +0+ "px";
+            div.style.top = intY + -400+"px";
+
+        }
+
+        //隐藏
+        function closeimg(){
+            document.getElementById("bigPicViewwuming").style.display="none";
+        }
+    </script>
+    <!-- ani -->
+    <script>
+        //展示
+        function showBigPic(filepath) {
+            //将文件路径传给img大图
+            document.getElementById('bigPicani').src = filepath;
+            //获取大图div是否存在
+            var div = document.getElementById("bigPicViewani");
+            if (!div) {
+                return;
+            }
+            //如果存在则展示
+            document.getElementById("bigPicViewani").style.display="block";
+            //获取鼠标坐标
+            var intX = window.event.clientX;
+            var intY = window.event.clientY;
+            //设置大图左上角起点位置
+            div.style.left = intX +0+ "px";
+            div.style.top = intY + -400+"px";
+        }
+        //隐藏
+        function closeimg(){
+            document.getElementById("bigPicViewani").style.display="none";
+        }
+    </script>
+
+</head>
+<body>
+<div class="header-blackLine"></div>
+<div class="header-logo">
+    <img class="logo" src="img/赏云.jpg" alt="赏云" >
+</div>
+<div class="header-back">
+    <div class="header">
+        <ul>
+
+            <li class="header-li">
+                <a href="SHARING.html">首页</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-movie.html">光与影</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-MUSIC.html">嗨，音悦</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-STARS.html">星推荐</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-ABOUT.html">关于我们</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<br><br><br><br><br><br><br>
+<div class="search">
+    <div>
+        <ul>
+            <li>光与影<li>
+            Light and shade
+        </ul>
+    </div>
+    <div>
+        <form class="search-form">
+            <input type="text" placeholder="《大象席地而坐》">
+            <button type="submit">搜索</button>
+        </form>
+    </div>
+</div>
+
+<div id="special">
+    <div id="tui"><p id="tui1">特别推荐--大象席地而坐</p>
+        <a href="https://movie.douban.com/subject/27172891/?from=showing" target="_blank">
+
+    <img src="img/大象席地而坐.jpg" height="377" width="270"/></a></div>
+<p class="special" >
+    满州里动物园有一头大象，每天坐在那里。为朋友出头的少年、为弟报仇的恶霸哥哥、身陷囹圄的女生，卡在世界灰暗的缝隙里无法脱身，却挣扎着去看大象。萧瑟寒冬的一天，绝望身影在不对称不平衡的影像中碰撞， 爆裂了压抑的沉郁，在粗糙布景、朦胧灯光的低成本制作中肆意蔓延。<br>作者兼导演胡波 （笔名胡迁）首作，以青涩朴质与震撼感性，获柏林影展赏识入围论坛单元， 却是无法嵌合和谐主旋律的一块失落拼图。看不见大象是共同宿命，胡波骤然陨落，也成了这一代人的遗憾。
+<br><mark>该片获得了第55届台湾电影金马奖“最佳剧情片奖”。</mark>
+</p>
+    </div>
+<div>
+<div class="container">
+    <div class="row">
+        <!-- #content -->
+        <div id="content" class="span9">
+
+            <!-- .post -->
+            <article class="post">
+                <!-- .entry-header -->
+                <header class="entry-header" >
+                    <div class="entry-meta-left">
+                           <p>11.9</p>
+                    </div>
+                    <div>
+                        <h3 class="entry-title">
+                            <a class="au\a" href="https://movie.douban.com/subject/3168101/"  target="_blank">毒液：致命守护者 Venom</a>
+                        </h3>
+                    </div>
+                    <div class="entry-meta">
+                                <span class="author">
+                                    Director
+                                    <a href="https://movie.douban.com/celebrity/1274906/" target="_blank">鲁本·弗雷斯彻Ruben Fleischer</a>
+                                    <br>
+                                    Author
+                                    <a href="https://movie.douban.com/celebrity/1339645/" target="_blank">杰夫·皮克纳 Jeff Pinkner</a>
+                                    <a href="https://movie.douban.com/celebrity/1045248/" target="_blank">斯科特·罗森伯格 Scott Rosenberg</a>
+                                    <a href="https://movie.douban.com/celebrity/1115889/" target="_blank">凯莉·马塞尔 Kelly Marcel</a>
+
+                                </span>
+                        <span class="tag-links">
+                                    <a href="#" rel="tag">动作</a>
+                                    <a href="#" rel="tag">科幻</a>
+                                    <a href="#" rel="tag">惊悚</a>
+                                </span>
+                    </div>
+                </header>
+
+                <!-- .entry-content -->
+                <div class="entry-content">
+                        <img class="alignleft" src="img/毒液1.jpg" height="191.5" width="135" onmousemove="showBigPic(this.src)" onmouseout="closeimg()"/>
+                    <div id="bigPicViewduye" style="position:absolute;display:none;">
+                        <img src="" width="250px" id="bigPicduye"/><br />
+                    </div>
+                    <p class="ariti">
+                        《毒液：致命守护者》是一部由美国哥伦比亚电影公司、腾讯影业、漫威影业联合出品，索尼电影娱乐公司发行的科幻电影，由鲁本·弗雷斯彻执导，汤姆·哈迪、米歇尔·威廉姆斯、里兹·阿迈德等人主演 [1]  。
+                        影片改编自漫威漫画，讲述了埃迪·布洛克受到不明外星物质共生体的入侵与控制，成为亦正亦邪的另类超级英雄的故事
+                    </p>
+                    <p class="ariti">
+                        2018漫威压轴巨制，蜘蛛侠最强劲敌“毒液”强势来袭！曾主演《敦刻尔克》《盗梦空间》等口碑大片的肌肉型男汤姆·哈迪在本片中饰演“毒液”的宿主–埃迪·布洛克。身为记者的埃迪在调查生命基金会老板卡尔顿·德雷克（里兹·阿迈德饰）的过程中，事业遭受重创，与未婚妻安妮·韦英（米歇尔·威廉姆斯饰）的关系岌岌可危，并意外被外星共生体入侵，历经挣扎对抗，最终成为拥有强大超能力，无人可挡的“毒液”。
+                    </p>
+
+                </div>
+            </article> <!-- /.post -->
+
+            <!-- .post -->
+            <article class="post">
+                <!-- .entry-header -->
+                <header class="entry-header" >
+                    <div class="entry-meta-left">
+                        <p>11.9</p>
+                    </div>
+                    <div>
+                        <h3 class="entry-title">
+                            <a  class="au\a"href="https://movie.douban.com/subject/27110363/"  target="_blank">名侦探柯南：零的执行人 名探偵コナン ゼロの執行人 </a>
+                        </h3>
+                    </div>
+                    <div class="entry-meta">
+                                <span class="author">
+                                    Director
+                                    <a href="https://movie.douban.com/celebrity/1360044/" target="_blank">立川让 Yuzuru Tachikawa</a>
+                                    <br>
+                                    Author
+                                    <a href="https://movie.douban.com/celebrity/1320562/" target="_blank">樱井武晴 Takahiro Sakurai</a>
+                                    <a href="https://movie.douban.com/celebrity/1020151/" target="_blank">青山刚昌 Gôshô Aoyama</a>
+                                </span>
+                        <span class="tag-links">
+                                    <a href="#" rel="tag">动画  </a>
+                                    <a href="#" rel="tag">悬疑</a>
+                                </span>
+                    </div>
+                </header>
+
+                <!-- .entry-content -->
+                <div class="entry-content">
+                    <img src="img/柯南1.jpg" height="191.5" width="135" onmousemove="showBigPic(this.src)" onmouseout="closeimg()"/>
+                    <div id="bigPicViewkenan" style="position:absolute;display:none;">
+                        <img src="" width="250px" id="bigPickenan"/><br />
+                    </div>/>
+                    <p class="ariti">
+                        《名侦探柯南：零的执行人》是电视动画《名侦探柯南》系列的第22部动画电影。作品由立川让担任导演，樱井武晴担任编剧。影片以针对东京峰会会场的大规模爆炸案为开端，讲述了身为侦探的柯南与公安警察从正面发生冲突的故事。
+                        作品于2018年4月13日在日本首映。
+                    </p>
+                    <p class="ariti">
+                        一场大规模的恐怖袭击，一个牵扯无数内幕的神秘组织，这个关乎整个东京的可怕计划即将拉开帷幕…首脑云集的东京峰会举办在即，会场突然发生超大规模的爆炸事件，不仅在现场发现行踪诡异的安室透，毛利小五郎更是惨遭陷害。面对最危险任务，最烧脑的推理，最艰难的博弈，柯南能否在迷雾中寻找到唯一的真相。
+                    </p>
+                </div>
+            </article> <!-- /.post -->
+
+
+            <!-- .post -->
+            <article class="post">
+                <!-- .entry-header -->
+                <header class="entry-header">
+                    <div class="entry-meta-left">
+                       <p>11.16</p>
+                    </div>
+                    <div>
+                        <h3 class="entry-title">
+                            <a class="au\a" href="https://movie.douban.com/subject/27110296/" target="_blank">无名之辈</a>
+                        </h3>
+                    </div>
+                    <div class="entry-meta">
+                                <span class="author">
+                                     Director
+                                    <a href="https://movie.douban.com/celebrity/1326752/" target="_blank">饶晓志 Xiaozhi Rao</a>
+                                    <br>
+                                    Author
+                                    <a href="https://movie.douban.com/celebrity/1326752/" target="_blank">饶晓志 Xiaozhi Rao</a>
+                                    <a href="https://movie.douban.com/celebrity/1357083/" target="_blank">雷志龙 Zhilong Lei</a>
+                                </span>
+                        <span class="tag-links">
+                                    <a href="#" rel="tag">剧情</a>
+                                    <a href="#" rel="tag">喜剧</a>
+                                </span>
+                    </div>
+                </header>
+
+                <!-- .entry-content -->
+                <div class="entry-content">
+                    <img src="img/无名之辈1.jpg" height="191.5" width="135" onmousemove="showBigPic(this.src)" onmouseout="closeimg()"/>
+                    <div id="bigPicViewwuming" style="position:absolute;display:none;">
+                        <img src="" width="250px" id="bigPicwuming"/><br />
+                    </div>/>
+                    <p class="ariti">
+                        《无名之辈》是由饶晓志执导，饶晓志、雷志龙编剧，陈建斌 、任素汐、 潘斌龙、 章宇、王砚辉、九孔等主演的电影。
+                        该片于2018年11月16日正式上映。                    </p>
+                    <p class="ariti">一个山水环绕的小城，一把不知道还能不能用的老枪，一对痴情又妄想的劫匪，一个落魄又落寞的保安，一个只能在轮椅上骂人的彪悍女子，一场事先被张扬的大型追债活动，还有谎话连篇的按摩女、心比天高的少年、相爱相杀假装要去浪迹天涯的成年情侣，在某一个貌似平常的日子里，不同人的生活突然被拧在了一起，就像那时而阳光时而阴雨的天气，谁也不知道下一刻会发生什么，直到那把哑火的枪突然射出子弹，死亡就像一个摇摇欲坠的笑话，突然冲到所有人的面前。</p>
+                </div>
+            </article> <!-- /.post -->
+
+
+            <!-- .post -->
+            <article class="post">
+                <!-- .entry-header -->
+                <header class="entry-header">
+                    <div class="entry-meta-left">
+                        <p>11.16</p>
+                    </div>
+                    <div>
+                        <h3 class="entry-title">
+                            <a class="au\a" href="https://movie.douban.com/subject/26147417/" target="_blank">神奇动物：格林德沃之罪 Fantastic Beasts: The Crimes of Grindelwald </a>
+                        </h3>
+                    </div>
+                    <div class="entry-meta">
+                                <span class="author">
+                                    Director
+                                    <a  href="https://movie.douban.com/celebrity/1275147/" target="_blank">大卫·叶茨 David Yates</a>
+                                    <br>
+                                    Author
+                                    <a href="https://movie.douban.com/celebrity/1022772/" target="_blank"  >J·K·罗琳 J.K. Rowling</a>
+                                </span>
+
+                        <span class="tag-links">
+                                    <a href="#" rel="tag">奇幻</a>
+                                    <a href="#" rel="tag"> 冒险</a>
+                                </span>
+                    </div>
+                </header>
+
+                <!-- .entry-content -->
+                <div class="entry-content">
+                    <img src="img/神奇动物2.jpg" height="191.5" width="135" onmousemove="showBigPic(this.src)" onmouseout="closeimg()"/>
+                    <div id="bigPicViewani" style="position:absolute;display:none;">
+                        <img src="" width="250px" id="bigPicani"/><br />
+                    </div>/>/>
+                    <p class="ariti">
+                        《神奇动物：格林德沃之罪》是美国华纳公司出品，J.K.罗琳担任编剧，大卫·叶茨执导，埃迪·雷德梅恩、凯瑟琳·沃特森、约翰尼等人主演的奇幻冒险电影。
+                        该片讲述了巫师世界越来越黑暗，黑巫师格林德沃将再次掀起风浪，纽特和邓布利多联合阻止魔法界的混乱的故事。
+                    </p>
+                    <p class="ariti">
+                    　在《神奇动物在那里》第一部的结尾，纽特·斯卡曼德（埃迪·雷德梅恩 Eddie Redmayne 饰）协助美国魔法国会，将强大的黑巫师盖勒特·格林德沃（约翰尼·德普 Johnny Depp 饰）抓捕归案。但格林德沃不久便兑现狂言成功越狱，并开始纠集信徒，着手实现他们的邪恶目的：让纯血统的巫师成为统治阶层，镇压一切非魔法生物。
+                    　　为挫败格林德沃的阴谋，阿不思·邓布利多（裘德·洛 Jude Law 饰）向昔日的学生纽特·斯卡曼德寻求帮助。纽特欣然允诺，却没有意识到，他将踏上的会是一段充满艰险的未来征途。此时的魔法世界面临空前的分裂乱局，阶层鸿沟日益加深，爱与忠诚备受考验，至亲好友也可能反目成仇……
+                </p>
+
+                </div>
+            </article> <!-- /.post --><br><br><br><hr>
+            <!-- footer -->
+            <div class="footer">
+                <div>
+                    <span>Copyright  2018.Company name All rights reserved.</span>
+                </div>
+                <div>
+                    <span>office@jingyun.com</span>
+                </div>
+            </div>
+        </div> <!-- /#content -->
+
+        <!-- #sidebar -->
+        <div id="sidebar" class="span3 widget-area">
+            <!-- .widget_text -->
+            <aside class="widget_text">
+                <h3 id="jinma" class="widget-title">第55届台湾电影金马奖佳片推荐</h3>
+                <div>
+                    <ul>
+                        <li class="jinma"><a href="https://baike.baidu.com/item/%E5%B9%B8%E7%A6%8F%E8%B7%AF%E4%B8%8A/22361360">幸福路上</a><br>
+                            <span class="tp">最佳动画长片</span></li>
+                        <li class="jinma"><a href="https://baike.baidu.com/item/%E5%90%89%E7%A5%A5/22902997">吉祥</a><br>
+                            <span class="tp">最佳剧情短片奖</span></li>
+                        <li class="jinma"><a href="https://baike.baidu.com/item/%E6%88%91%E4%B8%8D%E6%98%AF%E8%8D%AF%E7%A5%9E/22485219">我不是药神</a><br>
+                            <span class="tp">最佳原著剧本奖</span></li>
+                        <li class="jinma"><a href="https://baike.baidu.com/item/%E5%9C%B0%E7%90%83%E6%9C%80%E5%90%8E%E7%9A%84%E5%A4%9C%E6%99%9A/19175405">地球最后的夜晚</a><br>
+                            <span class="tp">最佳摄影奖</span></li>
+                        <li class="jinma"><a href="https://baike.baidu.com/item/%E5%BD%B1/20480432">影</a><br>
+                            <span class="tp">最佳导演奖  </span><span class="tp">最佳视觉效果奖  </span><br><span class="tp">最佳美术设计奖  </span><span class="tp">最佳造型设计奖</span></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- .widget_tag_cloud -->
+            <aside class="widget_tag_cloud">
+                <h3 class="widget-title">Tags</h3>
+                <div class="tag">
+                    <a href="#content">十一月影讯</a>
+                    <a href="#special" >影片特别推荐</a><br>
+                    <a href="#piaofang">11月票房</a>
+                    <a href="#jinma">金马55</a>
+                </div>
+            </aside>
+            <!-- .widget_categories -->
+            <aside class="widget_piaofang">
+                <h3 id="piaofang" class="widget-title">11月电影票房排行（截至11月22日）</h3>
+                <ol>
+                    <li class="cat-item "><a href="http://dianying.nuomi.com/movie/detail?movieId=95786">毒液：致命守护者</a>
+                        <div class="piaofang"><span class="tianshu">上映天数：14天</span>   <span >16.48亿</span></div></li>
+                    <li class="cat-item"><a href="http://dianying.nuomi.com/movie/detail?movieId=95380">神奇动物：格林德沃之罪</a>
+                        <div class="piaofang"><span class="tianshu">上映天数：7天</span> <span >3.48亿</span></div></li>
+                    <li class="cat-item"><a href="http://dianying.nuomi.com/movie/detail?movieId=95395">无名之辈</a>
+                        <div class="piaofang"><<span class="tianshu">上映天数：7天</span><span >1.43亿</span></div></li>
+                    <li class="cat-item"><a href="http://dianying.nuomi.com/movie/detail?movieId=95891">名侦探柯南：零的执行人</a>
+                        <div class="piaofang"><span class="tianshu">上映天数：14天</span><span >1.40亿</span></div></li>
+                    <li class="cat-item"><a href="http://dianying.nuomi.com/movie/detail?movieId=95863">你好，之华</a>
+                       <div class="piaofang"> <span class="tianshu">上映天数：14天</span><span >7943.1万</span></div></li>
+                    <li class="cat-item"><a href="http://dianying.nuomi.com/movie/detail?movieId=95896">无敌破坏王2：大闹互联网</a>
+                        <div class="piaofang"><span class="tianshu">上映天数：-1天</span><span>19.7万</span></div></li>
+                    <li class="cat-item"><a href="http://dianying.nuomi.com/movie/detail?movieId=95948">爱在归来那一天</a>
+                        <div class="piaofang"><span class="tianshu"> 上映天数：1天</span><span>11.4万</span></div></li>
+                    <li class="cat-item"><a href="http://dianying.nuomi.com/movie/detail?movieId=95916">憨豆特工3</a>
+                        <div class="piaofang"><span class="tianshu">上映天数：-1天</span><span>5.9万</span> </div></li>
+                    <li class="cat-item"><a href="http://dianying.nuomi.com/movie/detail?movieId=95948">恐龙王</a>
+                        <div class="piaofang"><span class="tianshu">上映天数：13天</span><span>2283.8万</span> </div></li>
+                    <li class="cat-item"><a href="http://dianying.nuomi.com/movie/detail?movieId=95948">嗝嗝老师</a>
+                        <div class="piaofang"><<span class="tianshu">上映天数：42天</span><span>1.50亿</span></div></li>
+                </ol>
+            </aside>
+
+
+
+        </div><!-- /#sidebar -->
+    </div><!-- /row -->
+</div> <!-- /container -->
+</div>
+</body>
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>

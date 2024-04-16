@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MUSIC</title>
+    <style>
+        div.header-blackLine
+        {
+            background-color: black;
+            height: 4px;
+        }
+        .header
+        {
+            height:120px;
+            width:1247px;
+            background:rgb(170,220,245);
+            position:absolute;
+            top:12px;
+            transition:0.4s;
+            border-bottom:2px solid rgba(180,180,180,0.6);
+        }
+        .header>ul
+        {
+            height:50px;
+            margin-right:120px;
+            margin-top: 28px;
+            float:right;
+        }
+        .header>ul li
+        {
+            color:#fff;
+            line-height:50px;
+            display:inline-block;
+            padding:0 20px;
+            float:left;
+        }
+        .header-li>a
+        {
+            color:black;
+            text-decoration: none;
+            font-size:15px;
+        }
+        .header-li>a:hover
+        {
+            color: rgb(234,62,72);
+        }
+        .logo
+        {
+            position: absolute;
+            left: 150px;
+            top:15px;
+            z-index: 1;
+        }
+
+        .search
+        {
+            height:135px;
+            width:1247px;
+            margin-top:120px ;
+            background:rgba(180,180,180,0.15);
+            border-bottom:2px solid rgba(180,180,180,0.6);
+        }
+        .search div:nth-child(2)
+        {
+            margin-top: 170px;
+            float: right;
+            margin-right: 200px;
+        }
+        .search div:nth-child(1)
+        {
+            margin-top: 18px;
+            float: left;
+            margin-left: 135px;
+        }
+        .search div:nth-child(1)>ul>li:first-child
+        {
+            color: rgb(40,40,40);
+            font-size: x-large;
+            font-weight:lighter ;
+            display:block;
+        }
+        .search div:nth-child(1)>ul>li:nth-child(2)
+        {
+            display: block;
+            line-height: 40px;
+            color: rgb(140,140,140);
+        }
+        .search-form input
+        {
+            position: absolute;
+            top: 178px;
+            right: 166px;
+            width: 20%;
+            height: 35px;
+            padding-left: 20px;
+            border: 2px solid rgb(180,180,180);
+            border-radius: 5px;
+            outline: none;
+            background:white;
+            color:black;
+        }
+        .search-form button
+        {
+            color: white;
+            position: absolute;
+            top: 180px;
+            right: 168px;
+            width: 42px;
+            height: 37px;
+            border: none;
+            background:rgb(170,220,245);
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .p1
+        {
+            float: left;
+            margin-top: 47px;
+            margin-left: 160px;
+            width: 300px;
+            height: 390px;
+            background: rgba(180,180,180,0.2);
+        }
+
+        .p1>img
+        {
+            width: 300px;
+        }
+        .p1>p:nth-child(2)
+        {
+            padding-left: 15px;
+        }
+        .p1>p:nth-child(3)
+        {
+            margin-right:5px ;
+            text-align: left ;
+            font-size: small;
+            line-height: 20px;
+            padding-right: 10px;
+            padding-left: 15px;
+            color: rgb(130,130,130);
+        }
+
+        .p2
+        {
+            float: left;
+            margin-top: 13px;
+            margin-left: 346px;
+            width: 300px;
+            height: 480px;
+            background: rgba(180,180,180,0.2);
+        }
+        .p2>p:nth-child(2)
+        {
+            padding-left: 15px;
+        }
+        .p2>img
+        {
+            width: 300px;
+        }
+        .p2>p:nth-child(3)
+        {
+            text-align: left ;
+            font-size: small;
+            line-height: 20px;
+            padding-right: 10px;
+            padding-left: 15px;
+            color: rgb(130,130,130);
+        }
+
+        .p3
+        {
+            float: left;
+            margin-top: -480px;
+            margin-left: 483px;
+            width: 300px;
+            height: 550px;
+            background: rgba(180,180,180,0.2);
+        }
+        .p3>p:nth-child(2)
+        {
+            padding-left: 15px;
+        }
+        .p3>img
+        {
+            width: 300px;
+        }
+        .p3>p:nth-child(3)
+        {
+            text-align: left ;
+            font-size: small;
+            line-height: 20px;
+            padding-right: 10px;
+            padding-left: 15px;
+            color: rgb(130,130,130);
+        }
+
+        .p4
+        {
+            float: left;
+            margin-top: -60px;
+            margin-left: -625px;
+            width: 300px;
+            height: 345px;
+            background: rgba(180,180,180,0.2);
+        }
+        .p4>p:nth-child(2)
+        {
+            padding-left: 15px;
+        }
+        .p4>img
+        {
+            width: 300px;
+        }
+        .p4>p:nth-child(3)
+        {
+            text-align: left ;
+            font-size: small;
+            line-height: 20px;
+            padding-right: 10px;
+            padding-left: 15px;
+            color: rgb(130,130,130);
+        }
+        .p5
+        {
+            float: left;
+            margin-top: 20px;
+            margin-left: 25px;
+            width: 600px;
+            height: 350px;
+            background: rgba(180,180,180,0.2);
+        }
+        .p5>p:nth-child(2)
+        {
+            padding-left: 15px;
+        }
+        .p5>img
+        {
+            width: 600px;
+        }
+        .p5>p:nth-child(3)
+        {
+            text-align: left ;
+            font-size: small;
+            line-height: 20px;
+            padding-right: 10px;
+            padding-left: 15px;
+            color: rgb(130,130,130);
+        }
+
+        .footer div:nth-child(1)
+        {
+            float: left;
+            height: 110px;
+        }
+
+        .footer div:nth-child(2)
+        {
+            float: right;
+            height: 110px;
+        }
+
+        .footer>div>span
+        {
+            display: block;
+            margin-top: 15px;
+            color: rgb(100,100,100);
+            font-size: small;
+        }
+
+        .footer>div:nth-child(1)>span
+        {
+            margin-left: 60px;
+        }
+        .footer>div:nth-child(2)>span
+        {
+            margin-right: 160px;
+        }
+        .music
+        {
+
+            height: 1020px;
+            border-bottom:2px solid rgba(180,180,180,0.6);
+        }
+    </style>
+</head>
+<body>
+<div class="header-blackLine"></div>
+    <div class="header-logo">
+        <img class="logo" src="img/赏云.jpg" alt="赏云" >
+    </div>
+    <div class="header-back">
+        <div class="header">
+            <ul>
+
+                <li class="header-li">
+                    <a href="SHARING.html">首页</a>
+                </li>
+                <li class="header-li">
+                    <a href="SHARING-movie.html">光与影</a>
+                </li>
+                <li class="header-li">
+                    <a href="SHARING-MUSIC.html">嗨，音悦</a>
+                </li>
+                <li class="header-li">
+                    <a href="SHARING-STARS.html">星推荐</a>
+                </li>
+                <li class="header-li">
+                    <a href="SHARING-ABOUT.html">关于我们</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+<div class="search">
+    <div>
+        <ul>
+            <li>嗨，音悦</li>
+            <li>Hai, fantastic music</li>
+        </ul>
+    </div>
+    <div>
+        <form class="search-form">
+            <input type="text" placeholder="林俊杰 《我们》">
+            <button type="submit">搜索</button>
+        </form>
+    </div>
+</div>
+
+<div class="music">
+    <div id="music_picture">
+        <div class="p1">
+            <img src="img/小情歌.jpg">
+                <p> &nbsp;苏打绿 《小情歌》</p>
+                <p>“ 要记得那些大雨中为你撑伞的人，帮你挡住外来之物的人，
+                    黑暗中默默抱紧你的人，逗你笑的人，陪你彻夜聊天的人，
+                    坐车来看望你的人，陪你哭过的人，在医院陪你的人，
+                    带着你四处游荡的人，说想念你的人。是这些人组成你生命中一点一滴的温暖，
+                    是这些温暖使你远离阴霾，是这些温暖使你成为善良的人。”
+                </p>
+        </div>
+        <div class="p2" >
+            <img src="img/奴隶.jpg">
+            <p>Jony J 《奴隶》</p>
+            <p>“ 许多时候，我们的内在眼睛是关闭着的。
+                于是，我们看见利益，却看不见真理，看见万物，却看不见美，
+                看见世界，却看不见上帝。我们的日子是满的，生命却是空的，头脑是满的，心却是空的。”
+            </p>
+        </div>
+        <div class="p3">
+            <img src="img/烟火里的尘埃.jpg">
+            <p>华晨宇 《烟火里的尘埃》</p>
+            <p>“ 什么时候最孤独？”<br/>“ 盛世烟火由你而放，他们都在看烟花，无人想起你。”</p>
+        </div>
+        <div class="p4">
+            <img src="img/时间飞行.jpg">
+            <p>白宇、朱一龙 《时间飞行》</p>
+            <p>“ 别放弃我们的坚定，命运依旧会有意义”<br/>
+                “经过多少练习才会成为这样的你”<br/>
+                “ 我停留在这里等你的消息，永远不说放弃”<br/>
+                “跨越时间，一起飞行”<br/>
+                “跨越时间，我在原地”
+            </p>
+        </div>
+        <div class="p5">
+            <img src="img/岁月神偷.jpg">
+            <p>金玟岐 《岁月神偷》</p>
+            <p>“ 时间何尝不是小偷，偷走了多少珍贵，换来的只是自己再也见不到的遗憾。”</p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div>
+        <span>Copyright © 2018.Company name All rights reserved.</span>
+    </div>
+    <div>
+        <span>office@jingyun.com</span>
+    </div>
+</div>
+</body>
+</html>

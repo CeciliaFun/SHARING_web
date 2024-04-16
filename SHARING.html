@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SHARING</title>
+
+    <style>
+        div.header-blackLine
+        {
+            background-color: black;
+            height: 4px;
+        }
+        .header
+        {
+            height:120px;
+            width:1247px;
+            background:rgb(170,220,245);
+            position:absolute;
+            top:12px;
+            transition:0.4s;
+            border-bottom:2px solid rgba(180,180,180,0.6);
+        }
+        .header>ul{
+            height:50px;
+            margin-right:120px;
+            margin-top: 28px;
+            float:right;
+        }
+        .header>ul li{
+            color:#fff;
+            line-height:50px;
+            display:inline-block;
+            padding:0 20px;
+            float:left;
+        }
+        .header-li>a
+        {
+            color:black;
+            text-decoration: none;
+            font-size:15px;
+        }
+
+        .header-li>a:hover
+        {
+            color: rgb(234,62,72);
+        }
+
+        .logo
+        {
+            position: absolute;
+            left: 150px;
+            top:15px;
+            z-index: 1;
+        }
+
+        .page1
+        {
+            margin-top: -51px;
+            height:500px;
+            width:1247px;
+            background: rgba(180,180,180,0.15);
+            border-bottom:2px solid rgba(180,180,180,0.6)
+        }
+
+        .page1-container
+        {
+            position: absolute;
+            left: 185px;
+            top:175px;
+            width: 440px;
+            height: 250px;
+            line-height: 33px;
+            border-right: 3px solid rgb(200,200,200);
+        }
+        .page1-container>p:first-child
+        {
+            position: absolute;
+            top: -25px;
+            font-size: x-large;
+            color: rgb(70,70,70);
+        }
+        .page1-container>p:nth-child(2)
+        {
+            position: absolute;
+            top: 30px;
+            line-height: 35px;
+            letter-spacing: 1px;
+            color: rgb(80,80,80);
+            font-size: 18px;
+        }
+        .page1-container>a
+        {
+            position: absolute;
+            top:200px;
+        }
+        .button {
+            background-color:rgb(170,220,245) ;
+            border:1px solid rgb(200,200,200);
+            color: white;
+            padding: 2px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .header2
+        {
+            margin-top: -11px;
+            width:1000px;
+
+        }
+
+        .header2>ul
+        {
+            height:50px;
+            margin-left:230px;
+            margin-top: 10px;
+            float:left;
+        }
+        .header2>ul>li
+        {
+            color:#fff;
+            line-height:10px;
+            display:inline-block;
+            padding:20px 30px;
+            float:left;
+        }
+
+        .header2>ul>li>a
+        {
+            color:black;
+            text-decoration: none;
+            font-size:15px;
+        }
+
+        .header2>ul li:nth-child(1)
+        {
+            border-bottom:6px solid rgb(234,62,72)
+        }
+
+        .header2>ul li:nth-child(10)
+        {
+            border-top:6px solid rgb(234,62,72)
+        }
+
+        .page2
+        {
+            margin-top: 64px;
+            height:330px;
+            width:1247px;
+            border-bottom:2px solid rgba(180,180,180,0.6);
+            border-top:2px solid rgba(180,180,180,0.3);
+        }
+
+        .page2-container
+        {
+            position: absolute;
+            left: 625px;
+            top:560px;
+            width: 440px;
+            height: 250px;
+            line-height: 33px;
+            border-left: 3px solid rgb(200,200,200);
+        }
+        .page2-container>p:first-child
+        {
+            position: absolute;
+            top: -25px;
+            left: 120px;
+            font-size: x-large;
+            color: rgb(70,70,70);
+        }
+        .page2-container>p:first-child>span
+        {
+            font-size: small;
+        }
+        .page2-container>p:nth-child(2)
+        {
+            position: absolute;
+            top: 30px;
+            left: 120px;
+            line-height: 35px;
+            letter-spacing: 1px;
+            color: rgb(80,80,80);
+            font-size: 18px;
+        }
+        .page2-container>a
+        {
+            position: absolute;
+            top:200px;
+            left: 120px;
+        }
+
+        .footer div:nth-child(1)
+        {
+            float: left;
+            height: 110px;
+        }
+
+        .footer div:nth-child(2)
+        {
+            float: right;
+            height: 110px;
+        }
+
+        .footer>div>span
+        {
+            display: block;
+            margin-top: 15px;
+            color: rgb(100,100,100);
+            font-size: small;
+        }
+
+        .footer>div:nth-child(1)>span
+        {
+            margin-left: 60px;
+        }
+        .footer>div:nth-child(2)>span
+        {
+            margin-right: 160px;
+        }
+
+        .film
+        {
+            width: 440px;
+            height:280px ;
+            position: absolute;
+            top: 287px;
+            left: 670px;
+        }
+        .film>ul>li:nth-child(1)
+        {
+            list-style: none;
+            position: absolute;
+            top:118px;
+            left: 340px;
+        }
+        .film>ul>li:nth-child(2)
+        {
+            position: absolute;
+            top:-140px;
+            left: 10px;
+            z-index: -1;
+        }
+        .film>ul
+        {
+            list-style: none
+        }
+        /*#adv li {overflow: hidden;width: 600px;height: 230px;}*/
+        .film>ul>li:nth-child(1)>a
+        {
+            display: inline-block;
+            float: left;
+            width: 17px;
+            height: 17px;
+            margin: 3px;
+            border: rgb(150,150,150) solid 1px;
+            border-radius: 16px;
+            background-color: rgb(170,220,245);
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            padding: 0;
+            font-size: 12px;
+        }
+        #ffimg
+        {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        .music
+        {
+            width: 440px;
+            height:280px ;
+            position: absolute;
+            top: 672px;
+            left: 95px;
+        }
+        .music>ul>li:nth-child(1)
+        {
+            list-style: none;
+            position: absolute;
+            top:118px;
+            left: 340px;
+        }
+        .music>ul>li:nth-child(2)
+        {
+            position: absolute;
+            top:-140px;
+            left: 10px;
+            z-index: -1;
+        }
+        .music>ul
+        {
+            list-style: none
+        }
+        /*#adv li {overflow: hidden;width: 600px;height: 230px;}*/
+        .music>ul>li:nth-child(1)>a
+        {
+            display: inline-block;
+            float: left;
+            width: 17px;
+            height: 17px;
+            margin: 3px;
+            border: rgb(150,150,150) solid 1px;
+            border-radius: 16px;
+            background-color: rgb(170,220,245);
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            padding: 0;
+            font-size: 12px;
+        }
+        #music-img
+        {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+    <script>
+        function a1() {
+            document.getElementById("ffimg").setAttribute("src","img/毒液.jpg");
+        }
+        function a2() {
+            document.getElementById("ffimg").setAttribute("src","img/格林德沃之罪.jpg");
+        }
+        function a3() {
+            document.getElementById("ffimg").setAttribute("src","img/无名之辈.jpg");
+        }
+        function a4() {
+            document.getElementById("ffimg").src='img/零之执行人.jpg';
+        }
+    </script>
+
+    <script>
+        function a5() {
+            document.getElementById("music-img").setAttribute("src","img/绝代风华.jpg");
+        }
+        function a6() {
+            document.getElementById("music-img").setAttribute("src","img/I'm Here.png");
+        }
+        function a7() {
+            document.getElementById("music-img").setAttribute("src","img/KDA.jpg");
+        }
+        function a8() {
+            document.getElementById("music-img").src='img/伤害.jpg';
+        }
+    </script>
+
+    <script>
+        function open1()
+        {
+            var a=window.confirm("将为您跳转至其他页面查看更多资讯");
+            if(a==true)
+            {
+                window.open('SHARING-MUSIC.html','_blank');
+            }
+        }
+        function open2()
+        {
+            var a=window.confirm("将为您跳转至其他页面查看更多资讯");
+            if(a==true)
+            {
+                window.open('SHARING-movie.html','_blank');
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="header-blackLine"></div>
+<div class="container">
+        <div class="header-logo">
+                <img class="logo" src="img/赏云.jpg" alt="赏云" >
+        </div>
+        <div class="header-back">
+            <div class="header">
+                <ul>
+                    <li class="header-li">
+                        <a href="SHARING.html" TARGET="_blank">首页</a>
+                    </li>
+                    <li class="header-li">
+                        <a href="SHARING-movie.html" target="_blank">光与影</a>
+                    </li>
+                    <li class="header-li">
+                        <a href="SHARING-MUSIC.html" target="_blank">嗨，音悦</a>
+                    </li>
+                    <li class="header-li">
+                        <a href="SHARING-STARS.html" target="_blank">星推荐</a>
+                    </li>
+                    <li class="header-li">
+                        <a href="SHARING-ABOUT.html">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="page1">
+            <div>
+                <div class="row">
+                    <div class="page1-container">
+                        <p>电影资讯&nbsp;•&nbsp;十一月</p>
+                        <p>1. 毒液：致命守护者<br/>
+                            2. 神奇动物：格林德沃之罪<br/>
+                            3. 无名之辈<br/>
+                            4. 名侦探柯南：零之执行人
+                        </p>
+                        <a  class="button"  onclick="open2()">更多资讯 >></a>
+                    </div>
+                    <div class="film">
+                        <ul>
+                            <li>
+                                <a href="#" onmousemove="a1()">1</a>
+                                <a href="#" onmousemove="a2()">2</a>
+                                <a href="#" onmousemove="a3()">3</a>
+                                <a href="#" onmousemove="a4()">4</a>
+                            </li>
+                            <li><a href="#"><img src="img/毒液.jpg" id="ffimg" width="448px" height="280px"/></a> </li>
+                        </ul>
+                        </div>
+            </div>
+        </div>
+            </div>
+
+        <div class="header2">
+            <ul>
+                <li><a href="">Music</a></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                <li ><a href="">Films</a></li>
+            </ul>
+        </div>
+
+        <div class="page2">
+            <div>
+                <div class="row">
+                    <div class="page2-container">
+                        <p>新歌榜&nbsp;&nbsp;<span>最近更新：11月23日</span></p>
+                        <p>1. 《绝代风华》- 许嵩<br/>
+                            2. 《I'm Here》- 范丞丞<br/>
+                            3. 《POP/STARS》- K/DA<br/>
+                            4. 《伤害》- 陈绮贞
+                        </p>
+                        <a class="button"  onclick="open1()">更多资讯 >></a>
+                    </div>
+                    <div class="music">
+                        <ul>
+                            <li>
+                                <a href="#" onmousemove="a5()">1</a>
+                                <a href="#" onmousemove="a6()">2</a>
+                                <a href="#" onmousemove="a7()">3</a>
+                                <a href="#" onmousemove="a8()">4</a>
+                            </li>
+                            <li><a href="#"><img src="img/绝代风华.jpg" id="music-img" width="448px" height="280px"/></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="footer">
+    <div>
+        <span>Copyright © 2018.Company name All rights reserved.</span>
+    </div>
+    <div>
+        <span>office@jingyun.com</span>
+    </div>
+</div>
+</body>
+</html>

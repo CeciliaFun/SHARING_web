@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Huiyun Yang">
+    <meta name="keywords" content="个人介绍">
+    <meta name="description" content="这是一个关于杨惠云的介绍">
+    <title>关于杨惠云</title>
+    <style>
+        <!-- head -->
+        div.header-blackLine
+        {
+            background-color: black;
+            height: 4px;
+        }
+        .header
+        {
+            height:120px;
+            width:1150px;
+            background:rgb(170,220,245);
+            position:absolute;
+            top:12px;
+            padding-right: 100px;
+            padding-left: 100px;
+            transition:0.4s;
+            border-bottom:2px solid rgba(180,180,180,0.6);
+        }
+        .header>ul{
+            height:50px;
+            margin-right:120px;
+            margin-top: 28px;
+            float:right;
+        }
+        .header>ul li{
+            color:#fff;
+            line-height:50px;
+            display:inline-block;
+            padding:0 20px;
+            float:left;
+        }
+        .header-li>a
+        {
+            color:black;
+            text-decoration: none;
+            font-size:15px;
+        }
+        .header-li>a:hover
+        {
+            color: rgb(234,62,72);
+        }
+        .logo
+        {
+            position: absolute;
+            left: 150px;
+            top:15px;
+            z-index: 1;
+        }
+        /*search*/
+        .search
+        {
+            height:135px;
+            width:1350px;
+            margin-top:120px ;
+            background:rgba(180,180,180,0.15);
+            border-bottom:2px solid rgba(180,180,180,0.6);
+        }
+        .search div:nth-child(2)
+        {
+            margin-top: 170px;
+            float: right;
+            margin-right: 200px;
+        }
+        .search div:nth-child(1)
+        {
+            margin-top: 18px;
+            float: left;
+            margin-left: 135px;
+        }
+        .search div:nth-child(1)>ul>li:first-child
+        {
+            color: rgb(40,40,40);
+            font-size: x-large;
+            font-weight:lighter ;
+            display:block;
+        }
+        .search div:nth-child(1)>ul>li:nth-child(2)
+        {
+            display: block;
+            line-height: 40px;
+            color: rgb(140,140,140);
+        }
+        .search-form input
+        {
+            position: absolute;
+            top: 178px;
+            right: 166px;
+            width: 20%;
+            height: 35px;
+            padding-left: 20px;
+            border: 2px solid rgb(180,180,180);
+            border-radius: 5px;
+            outline: none;
+            background:white;
+            color:black;
+        }
+        .search-form button
+        {
+            color: white;
+            position: absolute;
+            top: 180px;
+            right: 168px;
+            width: 42px;
+            height: 37px;
+            border: none;
+            background:rgb(170,220,245);
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        #all1
+        {
+            position: absolute;
+            left: 200px;
+        }
+        #all2
+        {
+            position: absolute;
+            left: 200px;
+            top: 1100px;
+        }
+        .audi
+        {
+            position: absolute;
+            top: -600px;
+        }
+        /*导航栏*/
+        #dao1 {
+            position:relative;
+            line-height:80px;
+            background-color:rgb(170,220,245);
+            float:left;
+            padding:6px;
+            width: 40px;
+            height:1800px;
+            -webkit-transition:width 2s;
+
+        }
+        #dao1:hover{
+            width:100px;
+        }
+
+        /*基本信息*/
+        #info
+        {
+            -webkit-column-count: 3;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        #yhy
+        {
+            position: absolute;
+            left: 70px;
+            top: 120px;
+        }
+        .jiben
+        {
+            position: absolute;
+            left: 350px;
+            top: 100px;
+        }
+        #photo
+        {
+            float: right;
+            position: absolute;
+            left: 300px;
+            top: -80px;
+            transform: rotate(5deg);
+        }
+        #self
+        {
+            position: absolute;
+            top: 500px;
+            width: 1000px;
+        }
+        /*hometown*/
+        #scnece
+        {
+            -webkit-column-count: 3;
+        }
+        #quanjing
+        {
+            position: relative;
+            left: -70px;
+            top: 70px;
+        }
+        #flower
+        {
+            position: relative;
+            left: -150px;
+            top: 120px;
+        }
+        #pzh
+        {
+            margin-left: 450px;
+            position: relative;
+            left: -400px;
+        }
+        /*school*/
+        #school
+        {
+            -webkit-column-count: 2;
+            position: absolute;
+            top: 600px;
+        }
+        .title
+        {
+            font-size: 22px;
+        }
+        #qizhong
+        {
+            font-size: 20px;
+        }
+        /*tese*/
+        #custom
+        {
+            position: absolute;
+            top: 850px;
+        }
+        #mango{
+            -webkit-column-count: 2;
+            position: relative;
+            left: 50px;
+        }
+        #mango img+p
+        {
+            position: relative;
+            left: -350px;
+            top: 80px;
+            border: silver;
+            border-style: dashed;
+            margin-right: 150px;
+            padding: 20px;
+
+        }
+        #mango p:nth-of-type(1){
+            font-size: 18px;
+            position: relative;
+            left: -200px;
+            top: 20px;
+        }
+        /*xiaochi*/
+        #fod
+        {
+            position: relative;
+            left: 120px;
+        }
+        #food
+        {
+            -webkit-column-count: 2;
+        }
+        #food1
+        {
+            margin-bottom: 80px;
+            position: relative;
+            left: 100px;
+            font-size: 20px;
+        }
+        #food p:nth-of-type(1){
+            font-size: 18px;
+            position: relative;
+            left: 150px;
+        }
+        #foodp
+        {
+            position: relative;
+            left: -400px;
+            top: -40px;
+        }
+        #foodp p:first-of-type{
+            border: silver;
+            border-style: dashed;
+            position: relative;
+            top: 90px;
+            left: 200px;
+            margin-right: 100px;
+            padding: 20px;
+        }
+        #foodimg
+        {
+            position: relative;
+            left: 20px;
+        }
+        .img
+        {
+            margin-left: 30px;
+        }
+        /*weather*/
+        #weather
+        {
+            position: absolute;
+            top: 1600px;
+        }
+        #weather article
+        {
+            margin-left: 450px;
+            position: relative;
+            left: -400px;
+        }
+        <!-- footer -->
+        .footer div:nth-child(1)
+        {
+            float: left;
+            height: 110px;
+        }
+
+        .footer div:nth-child(2)
+        {
+            float: right;
+            height: 110px;
+        }
+
+        .footer>div>span
+        {
+            display: block;
+
+            color: rgb(100,100,100);
+            font-size: small;
+        }
+
+        .footer>div:nth-child(1)>span
+        {   margin-top: 15px;
+            margin-left: 60px;
+        }
+        .footer>div:nth-child(2)>span
+        {
+            margin-top: -15px;
+            margin-right: 160px;
+        }
+    </style>
+</head>
+<body>
+<div class="header-blackLine"></div>
+<div class="header-logo">
+    <img class="logo" src="img/赏云.jpg" alt="赏云" >
+</div>
+<div class="header-back">
+    <div class="header">
+        <ul>
+            <li class="header-li">
+                <a href="SHARING.html" target="_blank">首页</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-movie.html" target="_blank">光与影</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-MUSIC.html" target="_blank">嗨，音悦</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-STARS.html" target="_blank">星推荐</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-ABOUT.html" target="_blank">关于我们</a>
+            </li>
+        </ul>
+    </div>
+    <div class="search">
+        <div>
+            <ul>
+                <li>嗨，这是我<li>
+                Hi，It's me
+            </ul>
+        </div>
+        <div>
+            <form class="search-form">
+                <input type="text" >
+                <button type="submit">搜索</button>
+            </form>
+        </div>
+    </div>
+<br><br><br><br><br><br><br>
+<nav id="dao1">
+    <div>
+        <a href="#self">关于自己</a><br>
+        <a href="#hometown">我的家乡</a><br>
+        <a href="#scnece">家乡美景</a><br>
+        <a href="#school">我的母校</a><br>
+        <a href="#custom">家乡特色</a><br>
+        <a href="#weather">家乡气候</a><br>
+    </div>
+</nav>
+</div>
+<div id="all1">
+    <div id="info">
+        <h1><mark>杨惠云</mark></h1>
+        <img  id="yhy" src="img/杨惠云.jpg" height="300" width="250"/>
+        <div class="jiben" >
+
+                <p id="name">姓名：杨惠云</p>
+                <p id="sex">性别：女 </p>
+           <p id="address">来自：四川攀枝花</p>
+                <p id="email">Email:1046357058@qq.com</p>
+
+                <p id="date">年龄：19岁</p>
+                <p id="idol">喜欢的偶像:防弹少年团（BTS）</p>
+            <img id="photo" src="img/yhy2-2.jpg" height="400" width="300"/>
+        </div>
+    </div><br><br><br><br>
+    <div></div>
+    <div>
+        <br>
+        <div id="self"><hr>
+            <h3>关于自己</h3>
+            <form method="post" autocomplete="on" novalidate="novalidate">
+                <div><label id="color">喜欢的颜色<input type="color"></label>
+                    <label id="sports">喜欢的运动 :游泳🏊 篮球🏀</label>
+                </div>
+                <div>
+                    <label>喜欢的歌手
+                        <select id="singer">
+                            <option value="Troye Sivan">Troye Sivan
+                            <option value="Justin Bieber">Justin Bieber
+                            <option value="Taylor Swift">Taylor Swift
+                        </select>
+                    </label>
+                    <label>我喜欢的汽车品牌
+                        <select>
+                            <option value ="volvo">Volvo</option>
+                            <option value ="BMW">BMW</option>
+                            <option value="Benz">Benz</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </label>
+                    <label>我喜欢吃的食物
+                        <select>
+                            <optgroup label="川菜">
+                                <option value="宫保鸡丁">宫保鸡丁</option>
+                                <option value="水煮肉片">水煮肉片</option>
+                            </optgroup>
+                            <optgroup label="滇菜">
+                                <option value="沾益辣子鸡">沾益辣子鸡</option>
+                                <option value="菠萝饭">菠萝饭</option>
+                            </optgroup>
+                        </select>
+                    </label>
+                </div>
+                <fieldset>
+                    <legend>我喜欢的电影</legend>
+                    亚洲:
+                    <label>
+                        <select>
+                            <option value ="volvo">Volvo</option>
+                            <option value ="BMW">BMW</option>
+                            <option value="Benz">Benz</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </label>
+                    欧美:
+                    <label>
+                        <select>
+                            <option value ="volvo">Volvo</option>
+                            <option value ="BMW">BMW</option>
+                            <option value="Benz">Benz</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </label>
+                </fieldset>
+            </form>
+        </div><br>
+    </div>
+
+</div>
+    <hr>
+<div id="all2">
+    <div id="hometownall">
+        <div id="hometown">
+
+            <a href="https://baike.baidu.com/item/%E6%94%80%E6%9E%9D%E8%8A%B1/15931?fr=aladdin" target="_blank">
+                <p  class="title"><mark>我的家乡---<ruby>攀<rt>pan</rt></ruby><ruby>枝<rt>zhi</rt></ruby><ruby>花<rt>hua</rt></ruby></mark></p>
+            </a>
+
+            <p id="pzh">
+                <strong>攀枝花，原名<del>渡口</del>,</strong>四川省地级市，地处中国西南川滇结合部，南连东盟自贸区，北连成渝经济区，是全国唯一以花名命名的城市、新中国首个资源开发特区、万里长江上游第一城，被誉为“花是一座城，城是一朵花”，是四川省攀西地区最大城市，川西南、滇西北区域性中心城市，四川南向开放门户，国家综合交通枢纽城市，唯一全域纳入国家级攀西战略资源创新开发试验区和国家现代农业示范区的城市。
+            </p>
+            <div id="scnece">
+               <p class="title"><mark>家乡美景</mark></p>
+                    <div id="jinshajiang"><h2>金沙江风貌</h2><br><img src="img/金沙江.jpg" alt="金沙江风貌" height="200" width="300"/></div><br>
+                    <div id="quanjing"><h2>攀枝花全景图</h2><br><img src="img/全景.jpg" alt="攀枝花全景图" height="200" width="300"/></div><br>
+                    <div id="flower"><h2>美丽的攀枝花 </h2><br><img src="img/攀枝花.jpg" alt="美丽的攀枝花" height="200" width="300"/></div><br>
+
+            </div><hr>
+        </div>
+    </div>
+    <div id="school">
+
+               <p class="title"><mark>我的高中--攀枝花市第七高级中学</mark></p>
+                <p id="qizhong">
+                攀枝花市第七高级中学校，位于攀枝花市西区，是首批四川省国家级示范性普通高中、首批四川省一级示范性普通高中，由攀枝花市人民政府举办，直属攀枝花市教体局管理的正县级全额拨款事业单位。
+                攀枝花市第七高级中学校，其前身是1981年由攀枝花钢铁公司创建的攀枝花钢铁集团公司第一中学。2005年12月1日，学校剥离攀钢集团，移交地方，更名为攀枝花市第七高级中学校。
+            </p>
+            <img src="img/ozh.jpg" alt="攀枝花七中" usemap="#mapimg">
+            <map name="mapimg" id="mapimg">
+                <area shape="default" href="#" coords="100,200,200,300" >
+            </map>
+
+    </div>
+    <br>
+    <section id="custom">
+        <p  class="title"><mark>家乡特色</mark></p>
+        <div id="mango">
+            <li>晚熟芒果</li>
+            <img src="img/mango.jpg" height="200"width="300">
+            <p id="mango1">
+                攀枝花芒果是四川省攀枝花的著名水果，具有纤维少、味甜芳香、质地腻滑、香气怡人、组织细密、营养丰富等优良品质，集热带水果精华于一身，而芒果被誉为“热带水果之王”。
+            </p>
+
+        </div>
+        <div id="food">
+            <div id="fod"><li>小吃</li></div>
+            <div id="food1">
+            <table  border="1" style=" border-style: dashed;border-collapse: collapse;">
+                <caption>攀枝花的美食</caption>
+
+                <tr>
+                    <th>盐边县   </th><th>米易县   </th><th>市区   </th>
+                </tr>
+                <tr>
+                    <td>羊肉米线  </td><td>伤心凉粉  </td><td>铜火锅  </td>
+                </tr>
+                <tr>
+                    <td>油底肉  </td><td>炸爬沙虫  </td><td>炒攀枝花  </td>
+                </tr>
+                <tr>
+                    <th>......   </th><th>......   </th><th>......   </th>
+                </tr>
+            </table><br>
+            </div>
+                <div id="foodp">
+                <p >
+                    攀枝花小吃类主要以四川味道为主，在当地人气最高的当属羊肉米线，纯羊肉熬制的高汤煮出的米线，再加上豆瓣、花椒、小米辣等佐料，味道独特极具代表性.
+                </p>
+                </div>
+            </div>
+        <div id="foodimg">
+            <img class="img" src="img/mixian.jpg"  width="300"height="200"/>
+            <img class="img" src="img/凉粉.jpg" width="300px" height="200px">
+            <img class="img" src="img/hotpot.jpg" width="300px" height="200px">
+        </div>
+    </section>.
+        <div id="weather">
+            <p class="title"><mark>家乡气候</mark></p>
+            <article>
+                攀枝花是中国阳光花城。年日照时数2700小时，一年四季阳光明媚、一年四季温暖如春、一年四季瓜果飘香、一年四季鲜花盛开、一年四季空气清新、一年四季明月繁星。
+                攀枝花是中国康养胜地。年均气温20.3℃，冬暖夏凉，温度、湿度、海拔高度、洁净度、优产度、和谐度“六度禀赋”适宜康养，入选全国首批医养结合试点城市，“康养+”产业正在兴起，正创建中国阳光康养产业发展试验区 。
+                2017年10月，被住建部命名为国家园林城市。
+            </article>
+            <img class="img" src="img/攀枝花1.jpg" height="200" width="300"/>
+            <img class="img" src="img/攀枝花2.jpg" height="200" width="300"/>
+            <img class="img" src="img/攀枝花3.jpg" height="200" width="300"/>
+            <hr>
+            <!-- footer -->
+            <div  class="footer">
+                <div id="footer1">
+                    <span>Copyright  2018.Company name All rights reserved.</span>
+                </div>
+                <div id="footer2">
+                    <span>office@jingyun.com</span>
+                </div>
+            </div>
+</div>
+</div>
+
+</body>
+</html>

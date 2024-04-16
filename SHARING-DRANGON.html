@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        *{                       /*通配选择器*/
+            padding: 10px;
+
+        }
+
+        div.header               /*类选择器*/
+        {
+            background-color:rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        span.s1                   /*类选择器*/
+        {
+            font-size: x-large;
+            font-family: 华文行楷,sans-serif;
+            letter-spacing: 2px;
+        }
+
+        span.s1:hover            /*类选择器、伪类*/
+        {
+            background-color: rgba(206,186,139,0.8);
+            border-color: silver;
+            border-style: outset;
+        }
+
+        div.introduction        /*类选择器*/
+        {
+            text-align: left;
+            line-height: 9px;
+            font-family:华文新魏,楷体,sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: black;
+            margin-left: -65px;
+            margin-top: -35px;
+            width:450px;
+            height:385px;
+            background-color: gainsboro;
+            box-shadow: 10px 10px 10px dimgray;
+        }
+
+        div.introduction:hover    /*类选择器、伪类*/
+        {
+            transform: translate(-5px,-5px);
+        }
+
+        div.back                 /*类选择器*/
+        {
+            float:left;
+            margin-top:50px;
+            margin-left:100px;
+            width:450px;
+            height:385px;
+            background-color: rgb(206,186,139);
+            box-shadow: 10px 10px 10px black;
+            z-index: -1;
+        }
+
+        div.head_bg            /*类选择器*/
+        {
+            margin: auto;
+            width:1180px;
+            height:510px;
+            background-image: url("img/居居4.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-clip:content-box;
+            /*border:2px;*/
+            box-shadow: 8px 8px 10px gray;
+        }
+
+        div.line p:first-child     /*类选择器、伪元素选择器*/
+        {
+            opacity: 0.5;
+            text-align: center;
+        }
+
+        div.h2_1                   /*类选择器*/
+        {
+            text-indent: 2em;
+            width: 1050px;
+            color: rgb(206,186,139);
+            font-weight: 900;
+        }
+
+        div.personal              /*类选择器*/
+        {
+            text-indent: 1em;
+            width: 1100px;
+            -webkit-column-count: 2;
+            -webkit-column-gap: 5px;
+
+            background-color: rgba(206,186,139,0.3);
+        }
+
+        div.personal p>span      /*类选择器、后代选择器、子元素选择器*/
+        {
+            color: dimgrey;
+        }
+
+        #top                     /*id选择器*/
+        {
+            margin: auto;
+            width:1100px;
+            background-color: rgb(206,186,139);
+            height:35px;
+        }
+
+        div.work                /*类选择器*/
+        {
+            margin: auto;
+            width:1100px;
+            height:510px;
+            background-clip:content-box;
+            /*border:2px;*/
+        }
+
+        div[class|=tv1]        /*属性选择器（选取以指定值开头的某元素（完整单词）*/
+        {
+            width: 180px;
+            height: 260px;
+            position: absolute;
+            margin-left: -10px;
+            margin-top: 20px;
+            background-image: url("img/镇魂.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            -webkit-transition: 200ms;
+            overflow: hidden;
+        }
+
+        div.tv1 p:nth-child(1)  /*类选择器、后代选择器、伪元素选择器*/
+        {
+            position: absolute;
+            margin-top: 266px;
+        }
+
+        div.tv1 p:nth-child(2)  /*类选择器、后代选择器、伪元素选择器*/
+        {
+            position: absolute;
+            margin-top: 291px;
+        }
+
+
+        div.tv1:hover          /*类选择器、伪元素选择器*/
+        {
+            background-color: rgba(85,111,181,0.4);
+            border-color: cornflowerblue;
+            border-style: solid;
+            border-width: 3px;
+            -webkit-transition: 100ms;
+            height: 320px;
+            transform: translateY(-30px);
+        }
+
+        div[class$="2"]       /*属性选择器（选择以指定值结尾的某元素）*/
+        {
+            float: left;
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 210px;
+            width: 180px;
+            height: 260px;
+            background-image: url("img/密战.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            -webkit-transition: 200ms;
+            overflow: hidden;
+
+        }
+
+        div.tv1+div:hover    /*类选择器、相邻兄弟选择器*/
+        {
+            background-color:rgba(206,186,139,0.4);
+            border-color: rgba(0,0,0,0.5);
+            border-style: solid;
+            border-width: 3px;
+            -webkit-transition: 100ms;
+            height: 320px;
+            transform: translateY(-30px);
+        }
+
+        div.tv2 p:nth-child(1)  /*类选择器、后代选择器、伪元素选择器*/
+        {
+            position: absolute;
+            margin-top: 266px;
+        }
+
+        div.tv2 p:nth-child(2)  /*类选择器、后代选择器、伪元素选择器*/
+        {
+
+            position: absolute;
+            margin-top: 291px;
+        }
+
+        div[class*=tv]:hover    /*属性选择器（匹配属性值中包含指定值的每个元素）*/
+        {
+            background-color:rgba(206,186,139,0.4);
+            border-color: rgba(0,0,0,0.5);
+            border-style: solid;
+            border-width: 3px;
+            -webkit-transition: 100ms;
+            height: 320px;
+            transform: translateY(-30px);
+        }
+
+        div[class^=tv] p:first-child /*属性选择器（匹配属性值以指定值开头的每个元素）*/
+        {                             /*后代选择器、伪元素选择器*/
+            position: absolute;
+            margin-top: 266px;
+        }
+
+        div[class^=tv] p+p          /*属性选择器（匹配属性值以指定值开头的每个元素）*/
+        {                           /*后代选择器、相邻兄弟选择器*/
+            position: absolute;
+            margin-top: 291px;
+        }
+
+        div.tv3                     /*类选择器*/
+        {
+            float: left;
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 430px;
+            width: 180px;
+            height: 260px;
+            background-image: url("img/新边城浪子.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            -webkit-transition: 200ms;
+            overflow: hidden;
+        }
+
+        div.tv4                     /*类选择器*/
+        {
+            float: left;
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 650px;
+            width: 180px;
+            height: 260px;
+            background-image: url("img/芈月传.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            -webkit-transition: 200ms;
+            overflow: hidden;
+        }
+
+        div.tv5                      /*类选择器*/
+        {
+            float: left;
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 870px;
+            width: 180px;
+            height: 260px;
+            background-image: url("img/情定三生.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            -webkit-transition: 200ms;
+            overflow: hidden;
+        }
+
+        div.list
+        {
+            position: relative;
+            top:-150px;
+            width:1100px;
+            height:330px;
+            /*background-color: rgba(0,0,0,0.8);*/
+            margin:auto;
+        }
+
+        caption
+        {
+            text-align: left;
+            font-size: larger;
+            font-weight: 600;
+        }
+
+        thead
+        {
+            background-color: gray;
+            color: white;
+        }
+
+        td
+        {
+            text-align: center;
+        }
+
+
+        table
+        {
+            width:1100px;
+            height: 400px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        table tr:nth-child(2n)
+        {
+            background-color:  rgba(206,186,139,0.6);
+        }
+
+        table tr:nth-child(2n-1)
+        {
+            background-color:  rgba(206,186,139,0.2);
+        }
+
+        .button {
+            background-color:rgb(206,186,139) ;
+            border: none;
+            color: white;
+            padding: 8px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+           /* margin: 2px 2px;*/
+            cursor: pointer;
+        }
+
+
+        a.head{text-decoration:none;}         /*类选择器*/
+        a.head:link{color: white;}            /*类选择器、伪类*/
+        a.head:visited{color: white;}         /*类选择器、伪类*/
+        #return:link{color: darkmagenta;}     /*类选择器、伪类*/
+        #return:visited{color: darkmagenta;}  /*类选择器、伪类*/
+
+        <img src="img/居居4.jpg" height="1080" width="1682"/><img src="img/居居4.jpg" height="1080" width="1682"/></style>
+
+</head>
+<body>
+<div class="head_bg">
+    <div class='header'>
+        <span class="s1"><a class="head" href='#personal'>  个人信息</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="s1"><a class="head" href='#work'>  主要作品</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="s1"><a class="head" href=''>  早年经历</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="s1"><a class="head" href=''>  演艺经历</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="s1"><a class="head" href=''>  人物评价</a></span>
+     <div class="back">
+        <div class="introduction">
+            <p>姓名：朱一龙</p>
+            <p>职业：演员</p>
+            <p>身高：180cm</p>
+            <p>出生日期：1988年4月16日</p>
+            <p>影视作品：《情定三生》《家宴》</p>
+            <p>《芈月传》《密战》《镇魂》等</p>
+        </div>
+    </div>
+    </div>
+</div>
+<br/><br/><br/><br/><br/>
+
+<h2 id="personal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人信息</h2>
+<div class="h2_1">———————————————————————————————————————————————————————————————</div>
+<div class="personal" >
+    <p><span>中文名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>朱一龙</p>
+    <p><span>国籍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>中国</p>
+    <p><span>身高&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>180cm</p>
+    <p><span>出生地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>湖北武汉</p>
+    <p><span>职业&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>演员</p>
+    <p><span>影视作品</span>《情定三生》《家宴》《芈月传》……</p>
+    <p><span>特长&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>钢琴、篮球</p>
+    <p><span></span></p>
+    <p><span>外文名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Zhu Yi Long</p>
+    <p><span>民族&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>汉族</p>
+    <p><span>血型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>O型</p>
+    <p><span>星座&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>白羊座</p>
+    <p><span>出生年月</span>1988年4月16日</p>
+    <p><span>毕业院校</span>北京电影学院2006级表演系本科</p>
+    <p><span>经纪公司</span>北京东方飞云国际影视公司</p>
+</div>
+<div id="top"><a id="return" href="#">返回顶部</a></div>
+
+<br/><br/><br/><br/>
+
+<h2 id="work">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主要作品</h2>
+<div class="h2_1">———————————————————————————————————————————————————————————————</div>
+<div class="work">
+    <div id="work_picture">
+        <div class="tv1">
+            <p>&nbsp;2018年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;《镇魂》</p>
+            <p>&nbsp;饰&nbsp;&nbsp;&nbsp;&nbsp;沈巍 黑袍使 夜尊</p>
+        </div>
+        <div class="tv2" >
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;2017年&nbsp;&nbsp;《密战》</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;饰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;岑子默</p>
+        </div>
+        <div class="tv3">
+            <p>2016年《新边城浪子》</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;饰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;傅红雪</p>
+        </div>
+        <div class="tv4">
+            <p>&nbsp;&nbsp;&nbsp;2015年&nbsp;&nbsp;《芈月传》</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;饰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;嬴稷</p>
+        </div>
+        <div class="tv5">
+            <p>&nbsp;&nbsp;2014年&nbsp;《情定三生》</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;饰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;迟瑞</p>
+        </div>
+    </div>
+</div>
+<div class="list">
+<table>
+    <caption>参演电视剧</caption>
+    <thead>
+        <tr>
+            <th>年份</th>
+            <th>作品</th>
+            <th>饰演角色</th>
+            <th>导演</th>
+            <th>合作演员</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>2019</td>
+        <td>《我的真朋友》</td>
+        <td>井然</td>
+        <td>张思麟</td>
+        <td>杨颖、邓伦</td>
+    </tr>
+    <tr>
+        <td>2018</td>
+        <td>《知否？知否？应是绿肥红瘦》</td>
+        <td>齐衡</td>
+        <td>张开宙</td>
+        <td>赵丽颖、冯绍峰</td>
+    </tr>
+    <tr>
+        <td>2018</td>
+        <td>《许你浮生若梦》</td>
+        <td>罗浮生、罗勤耕、程慕生</td>
+        <td>杨玄</td>
+        <td>安悦溪、朱鉴然</td>
+    </tr>
+    <tr>
+        <td>2018</td>
+        <td>《镇魂》</td>
+        <td>沈巍、黑袍使、夜尊</td>
+        <td>周远舟</td>
+        <td>白宇</td>
+    </tr>
+    <tr>
+        <td>2017</td>
+        <td>《花谢花飞花满天》</td>
+        <td>花无谢</td>
+        <td>赖水清</td>
+        <td>何润东、张馨予、李心艾</td>
+    </tr>
+    <tr>
+        <td>2017</td>
+        <td>《御姐归来》</td>
+        <td>何开心</td>
+        <td>田少波</td>
+        <td>安以轩、吴佳尼</td>
+    </tr>
+    <tr>
+        <td>2017</td>
+        <td>《夏梦狂诗曲》</td>
+        <td>柯泽</td>
+        <td>杨玄</td>
+        <td>张翰、高俊熙、宋轶</td>
+    </tr>
+    <tr>
+        <td>2016</td>
+        <td>《新边城浪子》</td>
+        <td>傅红雪</td>
+        <td>黄祖权</td>
+        <td>张馨予</td>
+    </tr>
+    <tr ><td colspan="5"><button class="button">查看更多</button></td></tr>
+</table>
+</div>
+
+
+
+
+</body>
+</html>

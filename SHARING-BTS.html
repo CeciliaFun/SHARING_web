@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>防弹少年团</title>
+    <style>
+        /*head*/
+        div.header-blackLine
+        {
+            background-color: black;
+            height: 4px;
+        }
+        .header
+        {
+            height:120px;
+            width:1170px;
+            background:rgb(170,220,245);
+            position:absolute;
+            top: 5px;
+            left: -10px;
+            right: -10px;
+            padding-right: 100px;
+            padding-left: 100px;
+            transition:0.4s;
+            border-bottom:2px solid rgba(180,180,180,0.6);
+        }
+        .header>ul{
+            height:50px;
+            margin-right:120px;
+            margin-top: 28px;
+            float:right;
+        }
+        .header>ul li{
+            color:#fff;
+            line-height:50px;
+            display:inline-block;
+            padding:0 20px;
+            float:left;
+        }
+        .header-li>a
+        {
+            color:black;
+            text-decoration: none;
+            font-size:15px;
+        }
+        .header-li>a:hover
+        {
+            color: rgb(234,62,72);
+        }
+        .logo
+        {
+            position: absolute;
+            left: 150px;
+            top:15px;
+            z-index: 1;
+        }
+        /*search*/
+        .search
+        {
+            height:135px;
+            width:1350px;
+            margin-top:120px ;
+            background:rgba(180,180,180,0.15);
+            border-bottom:2px solid rgba(180,180,180,0.6);
+        }
+        .search div:nth-child(2)
+        {
+            margin-top: 170px;
+            float: right;
+            margin-right: 200px;
+        }
+        .search div:nth-child(1)
+        {
+            margin-top: 18px;
+            float: left;
+            margin-left: 135px;
+        }
+        .search div:nth-child(1)>ul>li:first-child
+        {
+            color: rgb(40,40,40);
+            font-size: x-large;
+            font-weight:lighter ;
+            display:block;
+        }
+        .search div:nth-child(1)>ul>li:nth-child(2)
+        {
+            display: block;
+            line-height: 40px;
+            color: rgb(140,140,140);
+        }
+        .search-form input
+        {
+            position: absolute;
+            top: 178px;
+            right: 166px;
+            width: 20%;
+            height: 35px;
+            padding-left: 20px;
+            border: 2px solid rgb(180,180,180);
+            border-radius: 5px;
+            outline: none;
+            background:white;
+            color:black;
+        }
+        .search-form button
+        {
+            color: white;
+            position: absolute;
+            top: 180px;
+            right: 168px;
+            width: 42px;
+            height: 37px;
+            border: none;
+            background:rgb(170,220,245);
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        <!-- footer -->
+        .footer div:nth-child(1)
+        {
+            float: left;
+            height: 110px;
+        }
+
+        .footer div:nth-child(2)
+        {
+            float: right;
+            height: 110px;
+        }
+
+        .footer>div>span
+        {
+            display: block;
+
+            color: rgb(100,100,100);
+            font-size: small;
+        }
+
+        .footer>div:nth-child(1)>span
+        {   margin-top: 15px;
+            margin-left: 60px;
+        }
+        .footer>div:nth-child(2)>span
+        {
+            margin-top: -15px;
+            margin-right: 160px;
+        }
+        .logo
+        {
+            position: absolute;
+            left: 150px;
+            top:15px;
+            z-index: 1;
+        }
+        body{
+            background-image: url("img/background.jpg");
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+        }
+
+
+        div #RUN{
+            width: 100px;
+            height: 446px;
+
+        }
+        div #RUN :hover{
+            width: 1400px;
+        }
+        h1 span>a:link{
+            color: black;
+        }
+        h1 span>a:visited{
+            color: maroon;
+        }
+        h1 span>a:hover{
+            color: bisque;
+            background-color: #FF9999;
+        }
+        h1 span>a:active{
+            color:fuchsia;
+        }
+
+        #top {
+            background-color: cyan;
+            text-shadow: antiquewhite;
+            text-align: right;
+            width: 120px;
+            height: 80px;
+            transition:width 1s;
+            -webkit-transition:width 2s;
+        }
+        #top:hover{
+            width:1200px;
+        }
+        .basic{
+            -webkit-column-count:2 ;
+            color:maroon;
+        }
+
+        .basic p+img{
+            position: relative;
+            top: 100px;
+            transform: rotate(5deg);
+        }
+        .information {
+            border-collapse: collapse;
+            position: relative;
+            top: -380px;
+            border: black 1px solid;
+            width: 50%;
+            padding-left: 50px;
+            table-layout: fixed;
+
+        }
+        #chengyuan{margin-top: -450px;}
+        #jianjie div:first-child{
+            background-color: khaki;
+            font-size: xx-large;
+        }
+        #chengyuan>p{
+            background-color: khaki;
+            font-size: xx-large;
+        }
+        #zuopin> p{
+            background-color: khaki;
+            font-size: xx-large;
+        }
+        #award details:first-of-type{
+            background-color: khaki;
+            font-size: xx-large;
+        }
+        #pingjia p:first-of-type{
+            background-color: khaki;
+            font-size: xx-large;
+        }
+
+        .RM p:nth-child(2){
+            font-size: large;
+            color: black;
+            font-style: normal;
+            background-color: yellow;
+            border: #b3d4fc;
+            border-style: dotted;
+            width: 230px;
+        }
+        .RM{
+            position: relative;
+            float:left;
+            left: 150px;
+        }
+        .JIN  p:nth-child(2){
+            font-size: large;
+            color: black;
+            font-style: normal;
+            background-color: yellow;
+            border: #b3d4fc;
+            border-style: dotted;
+            width: 200px;
+        }
+        .JIN{
+            position: relative;
+            float:right;
+            right: 700px;
+
+        }
+
+        .J-HOPE  p:nth-child(2){
+            font-size: large;
+            color: black;
+            font-style: normal;
+            background-color: yellow;
+            border: #b3d4fc;
+            border-style: dotted;
+            width: 200px;
+        }
+        #second .J-HOPE{
+            position: relative;
+            float:left;
+            top: 500px;
+            right:00px;
+            bottom: 800px;
+        }
+        .SUGA  p:nth-child(2){
+            font-size: large;
+            color: black;
+            font-style: normal;
+            background-color: yellow;
+            border: #b3d4fc;
+            border-style: dotted;
+            width: 200px;
+        }
+        .SUGA{
+            position: relative;
+            float:right;
+        }
+        .JIMIN  p:nth-child(2){
+            font-size: large;
+            color: black;
+            font-style: normal;
+            background-color: yellow;
+            border: #b3d4fc;
+            border-style: dotted;
+            width: 200px;
+        }
+        .JIMIN{
+            position: relative;
+            float:right;
+        }
+        #second .V  p:nth-child(2){
+            font-size: large;
+            color: black;
+            font-style: normal;
+            background-color: yellow;
+            border: #b3d4fc;
+            border-style: dotted;
+            width: 200px;
+        }
+        #second .V{
+            position: relative;
+            float:right;
+            right: 350px;
+            top: 30px;
+            bottom: 800px;
+        }
+        #second .JK  p:nth-child(2){
+            font-size: large;
+            color: black;
+            font-style: normal;
+            background-color: yellow;
+            border: #b3d4fc;
+            border-style: dotted;
+            width: 250px;
+        }
+        #second .JK{
+            position: relative;
+            float:right;
+            left:170px;
+            top: 30px;
+            bottom: 800px;
+        }
+        [title="album"]{
+            text-decoration: silver;
+            color: darkcyan;
+        }
+        #pingjia p:nth-child(2){
+            color: coral;
+            border: crimson;
+            border-style:dashed ;
+            font-weight: bolder;
+        }
+        #pingjia p:nth-of-type(3){
+            color: coral;
+            border: crimson;
+            border-style:dashed ;
+            font-weight: bolder;
+        }
+        #pingjia p:nth-of-type(4){
+            color: coral;
+            border: crimson;
+            border-style:dashed ;
+            font-weight: bolder;
+        }
+
+        #first2 {/*----------图片轮播相框容器----------*/
+            position: absolute; /*--绝对定位，方便子元素的定位*/
+            width: 300px;
+            height: 300px;
+            overflow: hidden;/*--相框作用，只显示一个图片---*/
+            border-radius:5px;
+        }
+        #dis1 {/*--绝对定位方便li图片简介的自动分布定位---*/
+            position: absolute;
+            left: -50px;
+            top: -10px;
+            opacity: 0.5;
+        }
+        #dis1 li {
+            display: inline-block;
+            width: 200px;
+            height: 20px;
+            margin: 0 50px;
+            float: left;
+            text-align: center;
+            color: yellow;
+            border-radius: 10px;
+            background: #000;
+        }
+        #photos1 img {
+            float: left;
+            width:300px;
+            height:200px;
+        }
+        #photos1 {/*---设置总的图片宽度--通过位移来达到轮播效果----*/
+            position: absolute;z-index:9px;
+            width: calc(300px * 5);/*---修改图片数量的话需要修改下面的动画参数*/
+        }
+        .play1{
+            animation: ma 20s ease-out infinite alternate;/**/
+        }
+        @keyframes ma {/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/
+            0%,20% {		margin-left: 0px;		}
+            25%,40% {		margin-left: -300px;	}
+            45%,60% {		margin-left: -600px;	}
+            65%,80% {		margin-left: -900px;	}
+            85%,100% {		margin-left: -1200px;	}
+        }
+        .num{
+            position:absolute;z-index:10;
+            float: left;
+
+            right: 260px;
+            border-radius:100%;
+            background:#f00;
+            width:25px;height:25px;
+            line-height:25px;
+            cursor:pointer;
+            color:#fff;
+            text-align:center;
+            opacity:0.8;
+        }
+
+
+        .num:hover{background:#00f;}
+        .num:hover,#photos:hover{animation-play-state:paused;}
+        .num:nth-child(2){
+            margin-top:30px;
+        }
+        .num:nth-child(3){
+            margin-top:60px;
+        }
+        .num:nth-child(4){
+            margin-top:90px;
+        }
+        .num:nth-child(5){
+            margin-top:120px}
+        #a1:hover ~ #photos1{animation: ma1 .5s ease-out forwards;}
+        #a2:hover ~ #photos1{animation: ma2 .5s ease-out forwards;}
+        #a3:hover ~ #photos1{animation: ma3 .5s ease-out forwards;}
+        #a4:hover ~ #photos1{animation: ma4 .5s ease-out forwards;}
+        #a5:hover ~ #photos1 {animation: ma5 .5s ease-out forwards;}
+        @keyframes ma1 {0%{margin-left:0px;}100%{margin-left:-0px;}	}
+        @keyframes ma2 {0%{margin-left:-300px;}100%{margin-left:-300px;margin-right: -300px }	}
+        @keyframes ma3 {100%{margin-left:-600px;}	}
+        @keyframes ma4 {100%{margin-left:-900px;}	}
+        @keyframes ma5 {100%{margin-left:-1200px;}	}
+
+        #second2 {/*----------图片轮播相框容器----------*/
+            position: absolute; /*--绝对定位，方便子元素的定位*/
+            width: 300px;
+            height: 300px;
+            left: 500px;
+            overflow: hidden;/*--相框作用，只显示一个图片---*/
+            border-radius:5px;
+        }
+        #dis2 {/*--绝对定位方便li图片简介的自动分布定位---*/
+            position: relative;
+            left:-10px;
+            top: -200px;
+            opacity: 0.5;
+        }
+        #dis2 li {
+            display: inline-block;
+            width: 200px;
+            height: 20px;
+            margin: 0 50px;
+            float: left;
+            text-align: center;
+            color: crimson;
+            border-radius: 10px;
+            background: #000;
+        }
+        #photos2 img {
+            float: left;
+            width:300px;
+            height:200px;
+        }
+        #photos2 {/*---设置总的图片宽度--通过位移来达到轮播效果----*/
+            position: absolute;z-index:9px;
+            width: calc(300px * 5);/*---修改图片数量的话需要修改下面的动画参数*/
+        }
+        .play2{
+            animation: ma 20s ease-out infinite alternate;/**/
+        }
+        #b1:hover ~ #photos2{animation: ma1 .5s ease-out forwards;}
+        #b2:hover ~ #photos2{animation: ma2 .5s ease-out forwards;}
+        #b3:hover ~ #photos2{animation: ma3 .5s ease-out forwards;}
+        #b4:hover ~ #photos2{animation: ma4 .5s ease-out forwards;}
+        #b5:hover ~ #photos2 {animation: ma5 .5s ease-out forwards;}
+        </style>
+    <script> <!--getElementById,函数定义调用,switch语句,alert使用,for-in使用-->
+        window.onload=document.getElementById("tuanti").onclick=year();
+    function year() {
+            var Word = parseInt(prompt("请输入年份："));
+            switch (Word) {
+                case 2013:
+                    alert("防弹少年团出道");
+                    break;
+                case 2014:
+                    alert("防弹少年团出道第二年");
+                    break;
+                case 2015:
+                    alert("防弹少年团出道第三年");
+                    break;
+                case 2016:
+                    alert("防弹少年团出道第四年");
+                    break;
+                case 2017:
+                    alert("防弹少年团出道第五年");
+                    break;
+                case 2018:
+                    alert("防弹少年团出道第六年");
+                    break;
+                default:
+                    alert("再输入看看呢");
+                    for (Word in this)
+                    {document.write("请输入年份")}
+                   break;
+            }
+        }
+    </script>
+
+
+
+</head>
+<body>
+<div class="header-blackLine"></div>
+<div class="header-logo">
+    <img class="logo" src="img/赏云.jpg" alt="赏云" >
+</div>
+<div class="header-back">
+    <div class="header">
+        <ul>
+
+            <li class="header-li">
+                <a href="SHARING.html">首页</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-movie.html">光与影</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-MUSIC.html">嗨，音悦</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-STARS.html">星推荐</a>
+            </li>
+            <li class="header-li">
+                <a href="SHARING-ABOUT.html">关于我们</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="search">
+    <div>
+        <ul>
+            <li>嗨，防弹少年团</li>
+            <li>Hi,BTS</li>
+        </ul>
+    </div>
+    <div>
+        <form class="search-form">
+            <input type="text" placeholder="林俊杰 《我们》">
+            <button type="submit">搜索</button>
+        </form>
+    </div>
+</div>
+<div id="top">
+<h1>
+    <span><a href="#jianjie">团体介绍</a></span>
+    <span><a href="#chengyuan">成员介绍</a></span>
+    <span><a href="#zuopin">作品介绍</a></span>
+    <span><a href="#award">获奖记录</a></span>
+    <span><a href="#pingjia">人物评价</a></span>
+    <span><a id="baike" href="https://baike.baidu.com/item/%E9%98%B2%E5%BC%B9%E5%B0%91%E5%B9%B4%E5%9B%A2/5641534?fr=aladdin#3" target="_blank">防弹少年团百度百科</a></span>
+</h1>
+</div>
+<div id="RUN"><img src="img/奔跑.jpg" height="300"width="1400px">
+</div>
+
+<div id="jianjie">
+    <div ><p   onclick="this.innerHTML='BTS!'" >团体介绍</p></div>                            <!--innerHTML-->
+    <div class="basic">
+
+        <p>
+        防弹少年团（BTS）是BigHit Entertainment于2013年6月13日推出的韩国男子演唱组合，由金南俊、闵玧其、金硕珍、郑号锡、朴智旻、金泰亨、田柾国7位成员组成。
+     <br>
+        防弹少年团的雏形源自于2010年，韩国BigHit Entertainment代表方时赫在第一次听到金南俊的声音后，便为之折服，2010年的金南俊只是说唱圈的新人，方时赫在签下他之后，便以他为中心面试选拔了其余六位成员，在经过两年多的筹备，防弹少年团最终成团。
+        <br>
+    </p>
+
+    <img src="img/BTS.jpg" height="400" width="700"/>
+
+    </div>
+    <table class="information" >
+        <caption>基本信息</caption>
+        <tr>
+            <td>中文名</td><td>防弹少年团</td><td>代表作品</td><td>男子汉、N.O、荷尔蒙战争、Wake Up、Love Yourself 转 'Tear'</td>
+        </tr>
+        <tr>
+            <td>外文名</td><td>BTS、Bangtan Boys、방탄소년단、防弾少年団、ぼうだんしょうねんだん</td>
+            <td>别名</td><td>Bulletproof Boy Scouts</td>
+        </tr>
+        <tr>
+           <td>国籍</td> <td>韩国</td><td>职业</td><td>歌手</td>
+        </tr>
+        <tr>
+            <td>经纪公司</td><td>BigHit Entertainment</td>
+            <td>主要成就</td>
+            <td>第5届Melon音乐盛典最佳新人奖<br>
+            第32届金唱片大赏唱片部门大赏<br>
+            2017Mnet亚洲音乐大奖年度歌手奖<br>
+            第15届韩国音乐大奖年度歌手奖<br>
+            第25届公告牌音乐奖最佳社群媒体艺人奖</td>
+        </tr>
+    </table>
+</div>
+<br><br>
+<div id="chengyuan">
+   <p>成员介绍</p>
+    <div id="first"><div class="RM">
+        <img src="img/RM.jpg" height="280" width="240"/>
+        <p >
+        金南俊(艺名Rapmonster)，1994年9月12日出生于韩国京畿道高阳市一山东区，韩国流行乐男歌手、Rapper、主持人、音乐制作人、男子演唱组合防弹少年团队长。
+    </p>
+    </div>
+    <div class="JIN">
+        <img src="img/JIN.jpg" height="280" width="240"/>
+        <p >
+        金硕珍（艺名：Jin)1992年12月4日生于韩国京畿道果川市，毕业于韩国建国大学，韩国男子演唱组合防弹少年团正式公布的第四名成员，在团内为声乐、门面担当。
+    </p>
+    </div>
+    <div class="SUGA">
+        <img src="img/SUGA.jpg" height="280" width="240"/>
+    <p >
+        闵玧其（艺名SUGA），1993年3月9日出生于韩国大邱广域市，韩国流行乐男歌手、男子演唱组合防弹少年团成员。
+    </p>
+    </div>
+    </div>
+    <div id="second">
+    <div class="J-HOPE">
+        <img src="img/J-HOPE.jpg" height="280" width="240"/>
+        <p >
+            郑号锡(艺名J-HOPE)，1994年2月18日出生于韩国光州广域市，韩国流行乐男歌手、主持人、男子演唱组合防弹少年团成员。
+        </p>
+    </div>
+    <div class="JIMIN">
+        <img src="img/JIMIN.jpg"height="280" width="240"/>
+    <p >
+        朴智旻（艺名JIMIN），1995年10月13日出生于韩国釜山广域市，韩国流行乐男歌手、主持人、男子演唱组合防弹少年团成员。
+    </p>
+    </div>
+    <div class="V">
+        <img src="img/V.jpg" height="280" width="240"/>
+    <p >
+        金泰亨（艺名：V），1995年12月30日出生于韩国大邱，毕业于韩国艺术高中，韩国男子演唱组合防弹少年团正式公布的第一位成员，在团内为中低音主唱担当。
+    </p>
+    </div>
+    <div class="JK">
+        <img src="img/jk3.jpg" height="280" width="240"/>
+        <p >
+        田柾国（艺名JUNGKOOK），1997年9月1日出生于韩国釜山广域市，韩国流行乐男歌手、舞者，男子演唱组合防弹少年团成员。
+        </p>
+    </div>
+    </div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="zuopin">
+    <p>主要作品</p>
+
+    <div id="first2">
+        <a id="a1" class="num">1</a>
+        <a id="a2" class="num">2</a>
+        <a id="a3" class="num">3</a>
+        <a id="a4" class="num">4</a>
+        <a id="a5" class="num">5</a>
+
+        <div id="photos1" class="play1">
+            <img src="img/2Cool4Skool.jpg" height="300" width="300"/>
+            <img src="img/ORUL8,2.jpg" height="500" width="300"/>
+            <img src="img/DARK&WILD.jpg"height="300" width="300"/>
+            <img src="img/花样年华1.jpg"height="300" width="300"/>
+            <img src="img/花样年华2.jpg" height="300" width="300"/>
+            <ul id="dis1">
+                <li title="album">防弹少年团出道单曲。</li>
+                <li title="album"> 首张迷你专辑《O!RUL8,2?》。</li>
+                <li title="album">防弹少年团出道一年零两个月来发布首张正式专辑《Dark & Wild》<li>
+                <li title="album">《花样年华 pt.1》是防弹少年团的第三张迷你专辑</li>
+                <li title="album">《花样年华 pt.2》是上张专辑《花样年华 pt.1》的续集</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    <div id="second2">
+
+        <a id="b1" class="num">1</a>
+        <a id="b2" class="num">2</a>
+        <a id="b3" class="num">3</a>
+        <a id="b4" class="num">4</a>
+        <a id="b5" class="num">5</a>
+
+
+    <div id="photos2" class="play2">
+        <img src="img/YoungForerver.jpg" height="300" width="300"/>
+        <img src="img/WINGS.jpg"height="300" width="300"/>
+        <img src="img/承her.jpg" height="300" width="300"/>
+        <img src="img/转Tear.jpg"height="300" width="300"/>
+        <img src="img/结.jpg" height="300" width="300"/>
+        <ul id="dis2">
+             <li title="album">《花样年华young forever》是《花样年华》系列收尾的特别专辑。</li>
+            <li title="album">《Wings》是由防弹少年团录制的第二张韩语录音室专辑</li>
+            <li title="album">LOVE YOURSELF 承 'Her'》是第五张迷你专辑，该专辑也是其“Love Yourself”概念的首张专辑</li>
+            <li title="album">《Love Yourself 转 'Tear'》是韩第三张正规专辑。</li>
+            <li title="album">《Love Yourself 结 'Answer'》是第三张正规专辑再版专辑，同时也是防弹少年团“Love Yourself”概念的最后一张专辑</li>
+        </ul>
+    </div>
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="award">
+    <details>
+        <summary>获奖记录</summary>
+        <form  action="防弹.html" method="get" autocomplete="on" novalidate="novalidate">
+            <label>第15届韩国音乐大赏
+            <select>
+                <option value ="年度歌手奖">年度歌手奖</option>
+            </select>
+            </label>
+            <label>第19届Mnet亚洲音乐大奖
+            <select>
+                <option value ="Best Asian Style">Best Asian Style</option>
+                <option value ="最佳音乐录影带奖    《春日》">最佳音乐录影带奖   《春日》</option>
+                <option value="年度歌手">年度歌手</option>
+                <option value="最佳男子团体舞蹈奖     《血汗泪">最佳男子团体舞蹈奖[59]     《血汗泪</option>
+                <option value="最佳年度歌手">最佳年度歌手</option>
+                <option value="国际表演者奖">国际表演者奖</option>
+            </select>
+            </label><br>
+            <label>金唱片大赏
+            <select>
+                <option value ="唱片部门大赏     《Love Yourself 承 'Her'》">第32届唱片部门大赏     《Love Yourself 承 'Her'》</option>
+                <option value ="音源部门本赏     《春日》">第32届音源部门本赏     《春日》</option>
+                <option value="  唱片部门本赏     《WINGS》">  第31届唱片部门本赏     《WINGS》</option>
+                <option value=" Global K-POP Artist 奖">第31届 Global K-POP Artist 奖</option>
+            </select>
+            </label>
+            <label>公告牌音乐奖
+            <select>
+                <option value ="24">第24届最佳社群媒体艺人奖</option>
+                <option value ="25">第25届最佳社群媒体艺人奖</option>
+            </select>
+            </label>
+            <label>MTV欧洲音乐大奖
+            <select>
+                <option value ="全球最佳艺人奖">第22届全球最佳艺人奖</option>
+                <option value ="最佳韩国艺人奖">第21届最佳韩国艺人奖</option>
+            </select>
+            </label>
+        </form>
+    </details>
+</div>
+<div id="pingjia">
+    <p>人物评价</p>
+    <p>
+        防弹少年团不同于一般的偶像团体，成员们执着于音乐梦想，努力进行词曲创作并做到精益求精,成员们也都很有天赋。（搜狐韩娱、史蒂夫·青木综合评价）
+    </p><br>
+    <p>
+        防弹少年团在韩国国外获得了较高的关注，从音乐方面来看，防弹少年团里拥有着多位rapper，以Hip-Hop为基底的曲风，正符合2018年左右欧美音乐的流行趋势。在防弹少年团出道的前两年，他们以新人之姿得到了K-pop界的瞩目，他们的歌曲关注学生的梦想，以及现代社会的教育，特别是从“花样年华”系列专辑开始越来越明显的Trap、电子元素，更让防弹少年团越发接轨国际市场，防弹少年团的音乐事业也开始出现转折。他们的歌曲并非从说教的角度探讨青少年话题，而是从这些迷惘的、叛逆的青少年自身的角度出发，用音乐去表达他们的挣扎困惑，引起社会的关注，同时抚慰心灵 。（方时赫、新京报综合评价）
+    </p><br>
+     <p>
+         防弹少年团出色的舞蹈和歌曲包含着真心，拥有着可以把悲伤变为希望，把不同变为相同的魔法般的力量。7位成员将各自的本性和各自对生活的希望融入到歌曲中，超越了地域和语言，打破了文化和制度的限制。全世界的青年们通过防弹少年团的歌曲和舞蹈，梦想和热情获得慰藉和勇气。因为防弹少年团，韩国大众音乐向着世界舞台更近的跳跃了一步，得益于此，韩国青年通过KPOP这一音乐语言与全世界的青年们在人生与爱，梦想和痛苦上产生着共鸣，防弹少年团以帅气的样子向韩国的国民们，向全世界的人们分享着感动。（第12任韩国总统文在寅评）
+    </p>
+    <div id="key" onkeydown="key()"></div>
+
+
+</div>
+</body>
+</html>
